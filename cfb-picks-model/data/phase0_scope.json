@@ -1,0 +1,49 @@
+{
+  "phase": 0,
+  "purpose": "Scope check — which 2026 CFB markets are actually posted as of today",
+  "as_of": "2026-08-07",
+  "season_calendar": {
+    "week_0": {"date": "2026-08-29", "game_count": 8, "notable": [
+      "North Carolina vs TCU — Aviva Stadium, Dublin, Ireland (Aer Lingus Classic, 12:00 ET ESPN)",
+      "NC State vs Virginia — Nilton Santos Stadium, Rio de Janeiro, Brazil (first CFB game in South America, 15:30 ET ESPN)",
+      "San Jose State at USC (15:00 ET, NBC/Peacock)",
+      "Hawai'i at Stanford",
+      "Memphis at UNLV"
+    ]},
+    "week_1": {"start": "2026-09-03", "main_slate": "2026-09-05", "note": "Labor Day weekend; ~51 games with opening lines posted"}
+  },
+  "markets_available": [
+    {"market": "national_championship_futures", "available": true, "depth": "full board, all teams at FanDuel and DraftKings",
+     "sample": "Ohio State +550/+600 (fav), Notre Dame +700, Texas and Indiana co-third, Georgia in mix",
+     "note": "Indiana is the defending national champion and is NOT the favorite"},
+    {"market": "conference_winner_futures", "available": true, "depth": "all Power 4",
+     "sample": "ACC: Miami -138, SMU +700, Louisville +1000, Clemson +1600 | Big 12: Texas Tech +104, Utah +700, BYU +750 | Big Ten: Ohio State +223, Oregon +285, Indiana +317 | SEC: Georgia +257, Texas +376"},
+    {"market": "team_win_totals", "available": true, "depth": "all 134 FBS teams",
+     "sample": "Notre Dame 11.5, Texas Tech 11.5, Miami 10.5, Oregon 10.5, Indiana 10.5, Ohio State 9.5, Penn State 9.5, Texas 9.5, Georgia 9.5, Alabama 8.5, LSU 8.5, Texas A&M 8.5, Ole Miss 8.5, Oklahoma 7.5",
+     "structural_note": "2026 is the SEC's first 9-game conference schedule — no SEC team reached a 10-win total as a direct result"},
+    {"market": "heisman_futures", "available": true, "depth": "full board",
+     "sample": "CJ Carr (ND) +750, Arch Manning (TEX) +800/+775, Dante Moore (ORE) +1000, Trinidad Chambliss (MISS) +1100, Julian Sayin (OSU) top-tier by ticket share"},
+    {"market": "week_0_and_week_1_game_lines", "available": true, "depth": "~51 Week 1 games plus Week 0 slate",
+     "sample": "LSU -11 vs Clemson, Auburn -7 vs Baylor, Texas A&M -39.5 vs Missouri State, USC -35.5 vs San Jose State, Texas -31.5 vs Texas State, Florida State -30.5 vs New Mexico State, Rutgers -30.5 vs UMass"},
+    {"market": "player_props", "available": "unconfirmed", "depth": "to be verified by market thread",
+     "note": "Season-long award and stat props may exist; game-level player props are rarely posted this far out. Illinois additionally restricts college player props."}
+  ],
+  "cycle_context": {
+    "new_fbs_head_coaches": 30,
+    "new_p4_head_coaches": 17,
+    "new_p4_coordinators": 63,
+    "p4_programs_replacing_both_coordinators": 17,
+    "confirmed_hc_moves": [
+      {"coach": "Lane Kiffin", "to": "LSU", "from": "Ole Miss", "prior_record": "116-52"},
+      {"coach": "Kyle Whittingham", "to": "Washington", "from": "Utah"},
+      {"coach": "Jon Sumrall", "to": "Florida", "from": "Tulane"}
+    ],
+    "note": "Coaching turnover is the defining variable of the 2026 cycle and is treated as first-class in the personnel and historical threads"
+  },
+  "jurisdiction": {
+    "state": "Illinois",
+    "online_books": ["bet365", "BetMGM", "BetRivers", "Caesars", "Circa Sports", "DraftKings", "Fanatics", "FanDuel", "Hard Rock Bet", "theScore Bet"],
+    "restriction": "Wagers on Illinois-based college teams (Illinois, Northwestern) are in-person/retail only — not offered on online apps. Illinois also restricts college player props."
+  },
+  "verdict": "All five requested market categories are live. Proceed to Phase 1 across all four threads; player props to be confirmed rather than assumed."
+}
