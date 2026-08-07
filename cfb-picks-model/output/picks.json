@@ -1,0 +1,208 @@
+{
+  "generated": "2026-08-07",
+  "disclaimer": "Not financial advice. Research output for entertainment and analysis.",
+  "price_provenance_warning": "All sportsbook and odds-aggregator sites returned egress-blocked on direct fetch this session. Every price in this file is synthesized from web search result snippets, not read from a book. Treat all numbers as indicative, not executable — confirm at the book before placing anything. Two numbers carried in from the Phase 0 scope check failed verification and were corrected downward (Texas Tech win total 11.5 -> 10.5, Florida State spread -30.5 -> -28.5).",
+  "threads_used": {
+    "market": "data/market.json — 63 records, 63 sourced, 13 gaps",
+    "personnel": "data/personnel.json — 55 records, 28 sourced, 10 gaps",
+    "sentiment": "data/sentiment.json — 35 records, 35 sourced, 6 gaps",
+    "historical": "data/historical.json — 16 records (5 empirical / 11 structural), 6 gaps"
+  },
+  "alignment_rule": "High confidence requires >=2 threads independently aligned, no thread materially contradicting, and a price with no disagreement flag.",
+  "picks": [
+    {
+      "category": "high",
+      "subject": "Indiana",
+      "market": "team_win_total",
+      "line": "10.5",
+      "side": "under",
+      "price": "not sourced",
+      "book": "DraftKings/FanDuel/BetMGM",
+      "confidence": "high",
+      "reasoning": "Defending national champion returns just 56% of production (52nd nationally) per the personnel thread, while replacing Heisman winner and No. 1 overall pick Fernando Mendoza with TCU transfer Josh Hoover, whom sentiment scored public_too_high on generic camp praise. Historical supplies the mechanism: the win-total market pays for storyline over personnel continuity. Three threads align, none contradict, and the price carries no disagreement flag.",
+      "threads_cited": ["personnel", "sentiment", "historical"],
+      "il_retail_only": false,
+      "price_unverified": true,
+      "flags": ["win_total_juice_not_sourced"]
+    },
+    {
+      "category": "medium",
+      "subject": "Ole Miss",
+      "market": "team_win_total",
+      "line": "8.5 (market thread) vs 7.5 (historical thread source) — UNRESOLVED",
+      "side": "over",
+      "price": "not sourced",
+      "book": "consensus",
+      "confidence": "medium",
+      "reasoning": "Strongest thesis on the sheet, weakest price. Personnel scores Ole Miss +2 net — Pete Golding's internal promotion is the highest-continuity P4 head coaching change of the cycle. Sentiment confirms Trinidad Chambliss cleared for the full season after the Mississippi Supreme Court denied the NCAA's appeal. Historical independently flags a post-Kiffin market bias discounting a CFP semifinalist purely because its star coach left. Downgraded from high solely because two threads disagree on the number by a full win.",
+      "threads_cited": ["personnel", "sentiment", "historical"],
+      "il_retail_only": false,
+      "price_unverified": true,
+      "flags": ["line_disputed_7.5_vs_8.5", "resolve_number_before_betting"]
+    },
+    {
+      "category": "medium",
+      "subject": "Texas Tech",
+      "market": "team_win_total",
+      "line": "10.5 (this session) vs 11.5 (scope check) — UNRESOLVED",
+      "side": "under",
+      "price": "not sourced",
+      "book": "DraftKings/FanDuel/BetMGM",
+      "confidence": "medium",
+      "reasoning": "QB Brendan Sorsby is suspended for the first two games as a condition of the injunction restoring his eligibility amid an NCAA gambling investigation, verified by sentiment (-2) and personnel (-1) through ESPN and CBS. Honest counterpoint that caps this at medium: those two games are an FCS opponent and Oregon State, backup Will Hammond is healthy, and Tech likely wins both anyway. The edge is the off-field distraction plus an unresolved number on a top-two national win total, not the suspension itself.",
+      "threads_cited": ["sentiment", "personnel"],
+      "il_retail_only": false,
+      "price_unverified": true,
+      "flags": ["line_disputed_10.5_vs_11.5", "suspension_covers_two_likely_wins", "size_small"]
+    },
+    {
+      "category": "medium",
+      "subject": "LSU",
+      "market": "team_win_total",
+      "line": "8.5",
+      "side": "over",
+      "price": "-110",
+      "book": "unspecified SEC consensus",
+      "confidence": "medium",
+      "reasoning": "Cleanest coach-to-roster fit in the cycle per personnel (+2): Kiffin brought 8 of 11 new staff from Ole Miss including his OC, retained LSU's existing DC, and inherits 70% returning production (7th nationally). Sentiment adds a positive opening camp with transfer QB Sam Leavitt healthy in team periods. Capped at medium because that camp read is a single practice and 8.5 is a harder number in the SEC's first nine-game conference season.",
+      "threads_cited": ["personnel", "sentiment"],
+      "il_retail_only": false,
+      "price_unverified": true,
+      "flags": ["camp_signal_is_single_practice", "sec_9_game_schedule_raises_difficulty"]
+    },
+    {
+      "category": "medium",
+      "subject": "San Jose State at USC (Week 0, 2026-08-29)",
+      "market": "game_spread",
+      "line": "+35.5",
+      "side": "San Jose State",
+      "price": "not sourced",
+      "book": "unspecified",
+      "confidence": "medium",
+      "reasoning": "USC lost projected starting center Kilian O'Connor for the season to a broken leg in camp — verified by sentiment, which scored the market public_too_high on recency. Historical layers the opener dynamic: favorites in lopsided non-conference openers hold back playbook install and protect starters, suppressing large-spread cover rates. A new center calling protections while laying 35.5 is exactly this spot. Capped at medium because the historical support is structural reasoning, not a sourced ATS record.",
+      "threads_cited": ["sentiment", "historical"],
+      "il_retail_only": false,
+      "price_unverified": true,
+      "flags": ["historical_support_is_structural_not_empirical", "no_total_sourced"]
+    },
+    {
+      "category": "futures",
+      "subject": "Julian Sayin (Ohio State, QB)",
+      "market": "heisman",
+      "line": "+1000",
+      "side": "yes",
+      "price": "+1000",
+      "book": "DraftKings",
+      "confidence": "medium",
+      "reasoning": "Sayin is Ohio State's first unequivocal returning starting QB since 2022 after a 12-2 freshman season, with uniformly positive insider reporting (sentiment +1). Market prices him behind CJ Carr and Arch Manning at +750 despite his quarterbacking the team with the shortest championship odds on the board (+550/+600). Heisman voting follows team success, so a 2.5-point implied discount to the co-favorites is the value.",
+      "threads_cited": ["market", "sentiment"],
+      "il_retail_only": false,
+      "price_unverified": true,
+      "flags": []
+    },
+    {
+      "category": "speculative",
+      "subject": "Ohio State",
+      "market": "team_win_total",
+      "line": "9.5",
+      "side": "over",
+      "price": "not sourced",
+      "book": "DraftKings/FanDuel/BetMGM",
+      "confidence": "speculative",
+      "reasoning": "Sentiment scores Ohio State public_too_low on QB-room certainty and it is the championship favorite, but no other thread corroborates — personnel never sourced Ohio State's returning production. One thread with no support is speculative by rule regardless of how reasonable the thesis reads.",
+      "threads_cited": ["sentiment"],
+      "il_retail_only": false,
+      "price_unverified": true,
+      "flags": ["single_thread_only", "personnel_data_missing_for_team"]
+    },
+    {
+      "category": "speculative",
+      "subject": "Oklahoma",
+      "market": "team_win_total",
+      "line": "7.5",
+      "side": "over",
+      "price": "-145",
+      "book": "unspecified SEC consensus",
+      "confidence": "speculative",
+      "reasoning": "Personnel (75% returning production, 12th nationally) and sentiment (+1, John Mateer healthy and physically transformed) both support the over — but historical directly contradicts, flagging Oklahoma as drawing one of the two most lopsided national Over leans by handle. The market already knows, and -145 is what that knowledge costs. Downgraded from medium on the contradiction.",
+      "threads_cited": ["personnel", "sentiment", "historical"],
+      "il_retail_only": false,
+      "price_unverified": true,
+      "flags": ["contradicted_by_historical", "public_money_already_stacked", "expensive_juice_-145"]
+    },
+    {
+      "category": "speculative",
+      "subject": "Penn State",
+      "market": "team_win_total",
+      "line": "9.5",
+      "side": "under",
+      "price": "-134",
+      "book": "FanDuel",
+      "confidence": "speculative",
+      "reasoning": "Personnel flags a real Year 1 fit tax (net -1): Matt Campbell's run-first Iowa State identity imposed on Franklin's roster with no confirmed staff continuity. But the -134 under juice indicates the market has already priced it, and sentiment is neutral. Sound thesis, poor price — the only win total on the board with verified two-sided pricing, and it says the edge is gone.",
+      "threads_cited": ["personnel", "market"],
+      "il_retail_only": false,
+      "price_unverified": false,
+      "flags": ["edge_likely_already_priced", "sentiment_neutral"]
+    },
+    {
+      "category": "futures",
+      "subject": "LSU",
+      "market": "national_championship",
+      "line": "+2000",
+      "side": "yes",
+      "price": "+2000",
+      "book": "FanDuel",
+      "confidence": "speculative",
+      "reasoning": "Same Kiffin coach-fit thesis as the LSU win-total pick (personnel +2, sentiment +1), expressed as a 20-1 longshot. Speculative rather than medium because a championship future compounds every unmodeled variable across a full season and the supporting camp signal is one practice old.",
+      "threads_cited": ["personnel", "sentiment"],
+      "il_retail_only": false,
+      "price_unverified": true,
+      "flags": ["longshot", "same_thesis_as_lsu_win_total_do_not_double_up"]
+    }
+  ],
+  "avoid": [
+    {"subject": "Josh Hoover (Indiana) Heisman +1200", "reason": "Directly contradicted by the sheet's highest-confidence pick — the Indiana under rests on Hoover being a downgrade from Mendoza."}
+  ],
+  "player_props": {
+    "offered": false,
+    "reason": "Market thread found zero player props posted for Week 0 or Week 1 — expected this far out. None were fabricated. Separately, Illinois prohibits college player props entirely, retail and online, so these markets are unavailable in-state regardless."
+  },
+  "parlays": {
+    "offered": false,
+    "reason": "No genuinely correlated multi-leg exists in the sourced data. Indiana Under 10.5 and fading Indiana's +317 Big Ten price are the same thesis twice — parlaying them concentrates one view while multiplying vig. Ole Miss is the one team where a win-total leg and a conference leg would be genuinely correlated, but Ole Miss was not on the sourced SEC futures board so the second leg cannot be priced. An uncorrelated parlay is a worse version of two straight bets."
+  },
+  "illinois_compliance": {
+    "note": "Wagers on Illinois-based college teams (Illinois, Northwestern) are in-person/retail only at licensed IL sportsbooks — not available on any online app. Illinois also bans college player props entirely, retail and online.",
+    "affected_records": [
+      {"team": "Illinois", "win_total": 6.5, "il_retail_only": true, "model_lean": "none"},
+      {"team": "Northwestern", "win_total": 5.5, "il_retail_only": true, "model_lean": "none"}
+    ]
+  },
+  "actionable_trend_without_a_pick": {
+    "trend": "FBS teams playing their season opener against an opponent that has already played a game are 56-33 ATS (62.9%) since 2005. The market overvalues the extra look the already-played team received.",
+    "type": "empirical",
+    "source_url": "https://www.actionnetwork.com/ncaaf/college-football-betting-trends-week-1-angle-week-2-lookaheads",
+    "why_no_pick": "Directly actionable in Week 1 — fade the Week 0 participants (UNC, TCU, NC State, Virginia, USC, San Jose State, Hawai'i, Stanford, Memphis, UNLV) against opponents making their season debut. But the market thread never sourced those specific Week 1 matchups, so no bet can be named. Filling in that one slate converts a 63% trend into concrete picks — the highest-value next step.",
+    "priority": "highest"
+  },
+  "excluded": [
+    {"subject": "All prices on this sheet", "reason": "Sourced from web-search snippets, not direct book reads — all sportsbook and aggregator fetches were egress-blocked this session"},
+    {"subject": "Georgia (9.5 win total)", "reason": "Sentiment thread exhausted its budget before covering it — no opinion offered on a top-5 futures team"},
+    {"subject": "Rutgers -30.5 vs UMass", "reason": "Carried in the scope check but no source could be found to back the number; dropped rather than repeated unsourced"},
+    {"subject": "Notre Dame vs Wisconsin, Miami Week 1, Hawai'i at Stanford", "reason": "Games confirmed to exist; no lines sourced"},
+    {"subject": "Week 0 international games (UNC-TCU Dublin, NC State-Virginia Rio)", "reason": "Lines exist (TCU -6.5, Virginia -4.5, total 54.5) but no camp, injury or personnel research was done on any of the four teams. Single-thread only. The Rio game has zero historical precedent — first CFB game in South America."},
+    {"subject": "Kansas State head coaching claim", "reason": "Search result was internally contradictory; personnel thread discarded it rather than guess"},
+    {"subject": "Group of 5 conference futures", "reason": "Not located this session"},
+    {"subject": "~4 of 17 new P4 head coaches", "reason": "Not individually identified within budget — the coaching list is not exhaustive"}
+  ],
+  "data_gaps": [
+    "New-coach Year 1 ATS base rates do not exist in any sourced form. The historical thread searched seven analytics sites and found nothing usable. In a cycle with ~30 new head coaches this is the single largest hole in the model — every coaching-change judgment here rests on structural reasoning rather than data.",
+    "Transfer portal position-group data was sourced for only two teams (Oklahoma State, Texas Tech).",
+    "Returning production was sourced for only six teams (Texas, LSU, Oklahoma, Georgia, Indiana, Notre Dame).",
+    "Win-total juice was verified for exactly one team (Penn State, FanDuel).",
+    "Seven of the ten Illinois-legal books (bet365, BetRivers, Caesars, Circa, Fanatics, Hard Rock Bet, theScore Bet) could not be priced at all — only DraftKings, FanDuel and BetMGM were ever attributable.",
+    "Game totals and moneylines are missing for nearly every sourced game line.",
+    "The Florida State vs New Mexico State game has an unresolved date (Aug 29 Week 0 vs Sep 5 Week 1) in addition to a 2-point spread disagreement."
+  ]
+}
