@@ -35,8 +35,18 @@
     "p4_programs_replacing_both_coordinators": 17,
     "confirmed_hc_moves": [
       {"coach": "Lane Kiffin", "to": "LSU", "from": "Ole Miss", "prior_record": "116-52"},
-      {"coach": "Kyle Whittingham", "to": "Washington", "from": "Utah"},
+      {"coach": "Kyle Whittingham", "to": "Michigan", "from": "Utah", "prior_record": "177-88 over 21 seasons",
+       "detail": "Hired 2025-12-26, 5 years / $41M, replacing Sherrone Moore",
+       "source_url": "https://www.espn.com/college-football/story/_/id/47421108/whittingham-agrees-5-year-deal-coach-michigan"},
       {"coach": "Jon Sumrall", "to": "Florida", "from": "Tulane"}
+    ],
+    "corrections": [
+      {"field": "confirmed_hc_moves.Kyle Whittingham",
+       "was": "Whittingham to Washington",
+       "is": "Whittingham to MICHIGAN; Washington retained Jedd Fisch, entering his third season",
+       "caught_by": "sentiment thread",
+       "verified": "2026-08-07 via ESPN and University of Washington athletics staff directory",
+       "note": "This error originated in a Phase 0 search summary and was propagated into all four thread prompts. Personnel thread output must be cross-checked for it before synthesis."}
     ],
     "note": "Coaching turnover is the defining variable of the 2026 cycle and is treated as first-class in the personnel and historical threads"
   },

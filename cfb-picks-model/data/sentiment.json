@@ -1,0 +1,426 @@
+{
+  "thread": "sentiment",
+  "as_of": "2026-08-07",
+  "teams": [
+    {
+      "team": "Notre Dame",
+      "conference": "Independent",
+      "score": 1,
+      "justification": "CJ Carr enters as the unquestioned Day 1 starter for the first time (unlike last year's late-camp QB battle), removing a major variable; beat writers describe him as fully in command, with camp drama limited to the backup slot.",
+      "camp_signal": "On3 and AtoZ Sports Day 1 practice reports have Carr looking sharp and in control; the QB storyline is a backup competition (Hebert/Jarrard/Grubbs), not the starter.",
+      "public_narrative": "Market has Notre Dame at 11.5 wins, among the highest totals in the sport, built substantially on Carr's breakout freshman tape.",
+      "narrative_vs_reality": "aligned",
+      "sources": [
+        "https://www.on3.com/teams/notre-dame-fighting-irish/news/notre-dame-fighting-irish-football-2026-fall-camp-practice-1-quarterback-observations/",
+        "https://www.si.com/college/notredame/football/notre-dame-quarterback-preview-2026-cj-carr"
+      ],
+      "confidence": "reported"
+    },
+    {
+      "team": "LSU",
+      "conference": "SEC",
+      "score": 1,
+      "justification": "New coach Lane Kiffin's first fall camp opened with what he called 'really good energy,' and transfer QB Sam Leavitt looked sharp in his return from injury during Day 1 team periods.",
+      "camp_signal": "TigerRag, WBRZ and SI Day 1 reports confirm positive practice tone and a healthy-looking Leavitt; small sample (one practice) so durability of the signal is unproven.",
+      "public_narrative": "LSU under a brand-new staff typically carries elevated public uncertainty about scheme installation and QB health after Leavitt's injury history.",
+      "narrative_vs_reality": "unclear",
+      "sources": [
+        "https://www.tigerrag.com/live-lane-kiffin-recaps-first-day-of-lsu-fall-camp/",
+        "https://www.wbrz.com/news/lsu-enters-final-month-of-preparations-for-2026-27-football-season-as-fall-practices-begin/"
+      ],
+      "confidence": "reported"
+    },
+    {
+      "team": "Texas",
+      "conference": "SEC",
+      "score": 0,
+      "justification": "Arch Manning is fully available for fall camp despite offseason minor foot surgery that limited spring reps; Day 1 reports show him confident and accurate, but this simply confirms already-elevated market expectations rather than shifting them.",
+      "camp_signal": "SI and KXAN report Manning launching accurate deep balls and looking comfortable leading the offense on Day 1.",
+      "public_narrative": "Market has Texas at 9.5 wins with Heisman-level expectations for Manning already priced in.",
+      "narrative_vs_reality": "aligned",
+      "sources": [
+        "https://www.si.com/college/texas/football/what-we-learned-from-day-1-of-texas-longhorns-fall-camp",
+        "https://www.kxan.com/sports-general/horns-report/the-next-step-for-arch-manning-texas-qb-room-in-2026/"
+      ],
+      "confidence": "reported"
+    },
+    {
+      "team": "Michigan",
+      "conference": "Big Ten",
+      "score": 0,
+      "justification": "CORRECTION to research brief: Kyle Whittingham is Michigan's new head coach for 2026, not Washington's (Washington's HC is third-year Jedd Fisch). Michigan's camp opened with routine early-camp caution on QB Bryce Underwood ('catching up to do fundamentally') rather than any alarm.",
+      "camp_signal": "On3/247Sports quote Whittingham as measured and focused on fundamentals/trench play; no acute injury or QB controversy surfaced.",
+      "public_narrative": "Michigan carries typical new-staff uncertainty in the market given the full coaching turnover from the prior regime.",
+      "narrative_vs_reality": "unclear",
+      "sources": [
+        "https://www.on3.com/teams/michigan-wolverines/news/kyle-whittingham-michigan-opens-camp-with-three-positions-that-could-define-the-2026-season/",
+        "https://247sports.com/college/michigan/article/we-believe-in-bryce-kyle-whittingham-on-bryce-underwoods-development-ahead-of-fall-camp-288552780/"
+      ],
+      "confidence": "reported"
+    },
+    {
+      "team": "Florida",
+      "conference": "SEC",
+      "score": 0,
+      "justification": "New coach Jon Sumrall's first camp features a genuinely unresolved starting-QB competition that won't be settled until the Aug 15/22 scrimmages, alongside real strength-program gains, but a 4-8 team with a wide-open QB room is roughly what the market already expects.",
+      "camp_signal": "247Sports and WRUF report camp centered on determining the starter and note team-wide strength gains (~7 tons added since January in four core lifts).",
+      "public_narrative": "Florida carries minimal market expectations coming off a 4-8 season under new staff, so an unresolved QB battle is priced in.",
+      "narrative_vs_reality": "aligned",
+      "sources": [
+        "https://247sports.com/college/florida/longformarticle/florida-gators-football-everything-jon-sumrall-said-open-2026-fall-camp-288709093/",
+        "https://www.wruf.com/headlines/2026/08/04/jon-sumrall-gators-open-fall-camp-looking-to-erase-4-8-memory/"
+      ],
+      "confidence": "reported"
+    },
+    {
+      "team": "Ohio State",
+      "conference": "Big Ten",
+      "score": 1,
+      "justification": "Julian Sayin returns as OSU's first unequivocal returning starting QB since 2022 after a 12-2 freshman season, and insiders are uniformly positive on his offseason growth and leadership, a level of QB-room certainty most Big Ten contenders lack.",
+      "camp_signal": "247Sports and BucksInsider describe Sayin as the unquestioned room leader with Heisman-level buzz alongside WR Jeremiah Smith.",
+      "public_narrative": "Market has Ohio State at 9.5 wins.",
+      "narrative_vs_reality": "public_too_low",
+      "sources": [
+        "https://247sports.com/college/ohio-state/article/ohio-state-football-julian-sayin-becomes-ryan-days-third-returning-starting-qb-and-hes-not-wasting-the-opportunity-288734832/",
+        "https://www.bucksinsider.com/2026/07/22/fall-camp-preview-julian-sayin-returns-to-lead-quarterbacks/"
+      ],
+      "confidence": "reported"
+    },
+    {
+      "team": "Oregon",
+      "conference": "Big Ten",
+      "score": 1,
+      "justification": "Dante Moore forwent the 2026 NFL Draft to return as an established starter entering his second year running the offense, giving Oregon a proven, Heisman-caliber QB with no camp uncertainty.",
+      "camp_signal": "goducks.com and SI describe Moore directing the offense confidently at media day heading into camp.",
+      "public_narrative": "Market has Oregon at 10.5 wins.",
+      "narrative_vs_reality": "aligned",
+      "sources": [
+        "https://goducks.com/news/2026/8/3/football-media-day-sets-stage-for-start-of-fall-camp",
+        "https://www.si.com/college/oregon/football/oregon-ducks-quarterback-dante-moore-biggest-question-nfl-draft-decision"
+      ],
+      "confidence": "reported"
+    },
+    {
+      "team": "Ole Miss",
+      "conference": "SEC",
+      "score": 1,
+      "justification": "Trinidad Chambliss's eligibility fight resolved in his favor when the Mississippi Supreme Court denied the NCAA's appeal, clearing him to play a full 2026 season as a preseason All-SEC QB in a joint Heisman push with RB Kewan Lacy.",
+      "camp_signal": "247Sports and SI report Chambliss fully practicing and highly regarded entering camp, with underlying litigation no longer threatening 2026 availability.",
+      "public_narrative": "Ole Miss has been positioned as a national-title dark horse built around Chambliss.",
+      "narrative_vs_reality": "aligned",
+      "sources": [
+        "https://www.cbssports.com/college-football/news/ole-miss-qb-trinidad-chambliss-2026-ncaa-appeal/",
+        "https://247sports.com/college/ole-miss/article/ole-miss-qb-trinidad-chambliss-talks-celebrity-like-status-in-oxford-receiving-overhaul-and-stamping-a-legacy-in-2026-288758904/"
+      ],
+      "confidence": "verified"
+    },
+    {
+      "team": "Indiana",
+      "conference": "Big Ten",
+      "score": 0,
+      "justification": "Defending champion Indiana replaces Heisman winner/No.1 pick Fernando Mendoza with TCU transfer Josh Hoover, who got only generic positive marks in early camp looks — a real, still-unresolved QB downgrade risk — partially offset by DE Stephen Daley's surprise return from a season-ending knee injury under a new federal court ruling granting a 5th season to the 2022 HS grad class.",
+      "camp_signal": "Coach Curt Cignetti's comments on Hoover are positive but non-specific ('finished practice well,' 'a few nice throws'); Daley is on a modified program (individual drills only, no 11-on-11 yet).",
+      "public_narrative": "Market still prices Indiana as an elite repeat contender off last year's 16-0 title run; the Mendoza-to-Hoover QB transition appears underdiscussed relative to the repeat-champion storyline.",
+      "narrative_vs_reality": "public_too_high",
+      "sources": [
+        "https://wthr.com/article/sports/ncaa/ncaaf/reigning-national-champions-indiana-iu-hoosiers-open-up-fall-camp/531-e5be26ce-9d15-4c26-a95c-4e93d3a58f9c",
+        "https://www.eldoradonews.com/news/2026/aug/06/daley-makes-surprise-return-as-defending-national-champion-indiana-opens-practice/"
+      ],
+      "confidence": "reported"
+    },
+    {
+      "team": "Miami",
+      "conference": "ACC",
+      "score": 0,
+      "justification": "Darian Mensah (Duke transfer, led Power 4 in passing yards, ACC champion) is the settled starting QB entering camp with Luke Nickel behind him; no notable injuries surfaced in beat coverage.",
+      "camp_signal": "SI and 247Sports report a resolved QB spot, with camp focus elsewhere on depth-chart battles.",
+      "public_narrative": "Market has Miami at 10.5 wins.",
+      "narrative_vs_reality": "aligned",
+      "sources": [
+        "https://www.si.com/college/miami/football/will-anyone-s-rank-rise-in-miami-s-depth-chart-ahead-of-fall-camp",
+        "https://247sports.com/college/miami/article/miami-hurricanes-football-2026-projecting-miamis-depth-chart-at-the-start-of-fall-camp-288511370/"
+      ],
+      "confidence": "reported"
+    },
+    {
+      "team": "Oklahoma",
+      "conference": "SEC",
+      "score": 1,
+      "justification": "Returning starter John Mateer (12 starts in 2025) enters camp reportedly fully healthy and visibly transformed physically, with insiders (Jason Witten via On3) 'really impressed' — a level of QB and staff stability the market's low 7.5-win total may be underpricing.",
+      "camp_signal": "247Sports, Tulsa World and On3 describe Mateer as far along technically and physically, citing improved footwork, mechanics, and decision-making.",
+      "public_narrative": "Market has Oklahoma at just 7.5 wins, the lowest total among the extreme-win-total teams flagged for this season.",
+      "narrative_vs_reality": "public_too_low",
+      "sources": [
+        "https://www.on3.com/teams/oklahoma-sooners/news/inside-ou-fall-camp-why-jason-witten-is-really-impressed-with-quarterback-john-mateer/",
+        "https://tulsaworld.com/sports/college/ou/article_15309bd6-4d58-43c3-81d3-b8188ff0095b.html"
+      ],
+      "confidence": "reported"
+    },
+    {
+      "team": "USC",
+      "conference": "Big Ten",
+      "score": -1,
+      "justification": "Projected starting center Kilian O'Connor is out for the entire 2026 season with a broken leg suffered in fall camp practice — a significant, verified OL loss for a team opening Week 0 at home vs San Jose State on Aug 29. WR Tanook Hines is also limited to start camp.",
+      "camp_signal": "Newsweek, On3, and ClutchPoints confirm the O'Connor season-ending injury; Riley says Hines is the most limited player in camp but should return early in the season.",
+      "public_narrative": "USC is positioned as a Big Ten contender entering its Week 0 opener; the OL injury is recent enough that it may not be fully priced into market expectations yet.",
+      "narrative_vs_reality": "public_too_high",
+      "sources": [
+        "https://www.newsweek.com/sports/ncaa/usc-loses-starter-to-broken-leg-during-training-camp-12294426",
+        "https://www.on3.com/teams/usc-trojans/news/usc-football-ol-kilian-oconnor-suffers-season-ending-injury/"
+      ],
+      "confidence": "verified"
+    },
+    {
+      "team": "Texas Tech",
+      "conference": "Big 12",
+      "score": -2,
+      "justification": "Starting QB Brendan Sorsby — central to Tech's title defense and a nation-tying 11.5 win total — is suspended for the season's first two games (vs Abilene Christian and Oregon State) as a term of the court injunction that restored his NCAA eligibility amid a gambling investigation ($90K wagered over 4 years, including 40 bets on his own team while at Indiana). He returns for the Sept 18 Big 12 opener vs Houston. Backup Will Hammond is reported healthy and ready to start those games.",
+      "camp_signal": "National legal reporting (not team camp reports) drives this; Hammond quoted as 'excited to let it rip' with the starting reps in the interim.",
+      "public_narrative": "Market gives Tech the nation's highest win total (11.5) built around Sorsby's talent; the two-game suspension covering the actual season opener is a specific, dated fact that may not be fully absorbed into that number.",
+      "narrative_vs_reality": "public_too_high",
+      "sources": [
+        "https://www.espn.com/college-football/story/_/id/49000177/brendan-sorsby-granted-injunction-vs-ncaa-eligible-play-2026",
+        "https://www.cbssports.com/college-football/news/brendan-sorsby-granted-2026-eligibilty-texas-tech-qb-ncaa-gambling/",
+        "https://www.kcbd.com/2026/08/05/texas-tech-qb-hammond-excited-let-it-rip-fall-camp/"
+      ],
+      "confidence": "verified"
+    },
+    {
+      "team": "Penn State",
+      "conference": "Big Ten",
+      "score": 0,
+      "justification": "New coach Matt Campbell's first camp features several key defenders (Rojas, Jeremiah Cooper — both recovering from torn ACLs — and Burkle from a season-ending knee injury) working back from injury but expected to be game-ready by Week 1, while QB Alex Manske is fully cleared after missing spring for an undisclosed medical procedure. Campbell called the team 'fully healthy' at Big Ten Media Days.",
+      "camp_signal": "247Sports' long-form injury tracker and SI camp notes; positions of the recovering defenders were not precisely confirmed by available source text.",
+      "public_narrative": "Market has Penn State at 9.5 wins despite the full coaching change.",
+      "narrative_vs_reality": "unclear",
+      "sources": [
+        "https://247sports.com/college/penn-state/longformarticle/penn-state-football-injury-updates-preseason-camp-potential-impact-288643467/",
+        "https://onwardstate.com/2026/07/29/matt-campbell-gives-penn-state-football-health-updates-at-big-ten-media-days-fully-healthy/"
+      ],
+      "confidence": "reported"
+    }
+  ],
+  "injuries": [
+    {
+      "team": "USC",
+      "player": "Kilian O'Connor",
+      "position": "C",
+      "starter": true,
+      "issue": "Broken leg suffered in fall camp practice",
+      "status": "out",
+      "expected_return": "Season-ending, ruled out for all of 2026",
+      "affects_week_0_1": true,
+      "source_url": "https://www.newsweek.com/sports/ncaa/usc-loses-starter-to-broken-leg-during-training-camp-12294426",
+      "confidence": "verified"
+    },
+    {
+      "team": "USC",
+      "player": "Tanook Hines",
+      "position": "WR",
+      "starter": false,
+      "issue": "Undisclosed injury, most limited player in camp per Lincoln Riley",
+      "status": "limited",
+      "expected_return": "Early in the 2026 season per Riley, no specific date given",
+      "affects_week_0_1": true,
+      "source_url": "https://www.si.com/college/usc/football/usc-trojans-injury-update-coach-lincoln-riley-riley-wormley-eric-gentry-jayden-maiava-media-day-big-ten-trumain-carroll",
+      "confidence": "reported"
+    },
+    {
+      "team": "Indiana",
+      "player": "Stephen Daley",
+      "position": "DE",
+      "starter": true,
+      "issue": "Season-ending knee injury suffered during Big Ten championship postgame celebration (Dec 2025); now returning under a new federal court ruling granting a 5th season to the 2022 HS graduating class",
+      "status": "limited",
+      "expected_return": "On modified program: individual drills only, no 11-on-11 yet as of early camp",
+      "affects_week_0_1": true,
+      "source_url": "https://www.eldoradonews.com/news/2026/aug/06/daley-makes-surprise-return-as-defending-national-champion-indiana-opens-practice/",
+      "confidence": "verified"
+    },
+    {
+      "team": "Penn State",
+      "player": "Jeremiah Cooper",
+      "position": "unconfirmed (defense)",
+      "starter": true,
+      "issue": "Torn ACL suffered early last season",
+      "status": "limited",
+      "expected_return": "Game-ready or near game-ready by Week 1 per 247Sports tracker",
+      "affects_week_0_1": false,
+      "source_url": "https://247sports.com/college/penn-state/longformarticle/penn-state-football-injury-updates-preseason-camp-potential-impact-288643467/",
+      "confidence": "reported"
+    },
+    {
+      "team": "Penn State",
+      "player": "Alex Tatsch",
+      "position": "unconfirmed",
+      "starter": false,
+      "issue": "Injury recovery, described alongside Cooper's ACL timeline",
+      "status": "limited",
+      "expected_return": "Game-ready or near game-ready by Week 1 per 247Sports tracker",
+      "affects_week_0_1": false,
+      "source_url": "https://247sports.com/college/penn-state/longformarticle/penn-state-football-injury-updates-preseason-camp-potential-impact-288643467/",
+      "confidence": "reported"
+    },
+    {
+      "team": "Texas Tech",
+      "player": "Will Hammond",
+      "position": "QB",
+      "starter": false,
+      "issue": "Recovered from prior injury, now healthy and expected to start the games Sorsby is suspended for",
+      "status": "returning",
+      "expected_return": "Available now, entering fall camp fully cleared",
+      "affects_week_0_1": true,
+      "source_url": "https://www.kcbd.com/2026/08/05/texas-tech-qb-hammond-excited-let-it-rip-fall-camp/",
+      "confidence": "reported"
+    }
+  ],
+  "suspensions_eligibility": [
+    {
+      "team": "Texas Tech",
+      "player": "Brendan Sorsby",
+      "position": "QB",
+      "reason": "NCAA gambling investigation; Sorsby admitted to placing ~$90,000 in bets over 4 years, including 40 bets on his own team (Indiana) while a freshman there, and using others' accounts to evade detection. NCAA denied his reinstatement request; a Lubbock, TX judge granted a temporary injunction restoring 2026 eligibility, conditioned on missing the first two games.",
+      "games_affected": "First 2 games of the 2026 season (vs Abilene Christian, vs Oregon State); returns for Big 12 opener Sept 18 vs Houston",
+      "resolved": false,
+      "source_url": "https://www.espn.com/college-football/story/_/id/49000177/brendan-sorsby-granted-injunction-vs-ncaa-eligible-play-2026",
+      "confidence": "verified"
+    },
+    {
+      "team": "Ole Miss",
+      "player": "Trinidad Chambliss",
+      "position": "QB",
+      "reason": "NCAA denied a waiver/appeal for a 6th season of eligibility tied to a disputed 2022 medical redshirt at Ferris State (D2); Mississippi Supreme Court denied the NCAA's appeal of a lower court injunction, so Chambliss remains eligible for 2026 while the underlying case continues to be litigated.",
+      "games_affected": "None currently — cleared to play the full 2026 season under the standing injunction",
+      "resolved": true,
+      "source_url": "https://www.cbssports.com/college-football/news/ole-miss-qb-trinidad-chambliss-2026-ncaa-appeal/",
+      "confidence": "verified"
+    }
+  ],
+  "qb_situations": [
+    {
+      "team": "Notre Dame",
+      "starter_named": true,
+      "starter": "CJ Carr",
+      "backup": "Unresolved (Blake Hebert / Teddy Jarrard / Noah Grubbs competing)",
+      "note": "Carr is the unquestioned Day 1 starter for the first time; backup battle is the actual camp storyline.",
+      "source_url": "https://atozsports.com/college-football/notre-dame-fighting-irish-news/notre-dame-football-fall-camp-preview-quarterback-question-marks-cj-carr-blake-hebert-teddy-jarrard-noah-grubbs-marcus-freeman/",
+      "confidence": "reported"
+    },
+    {
+      "team": "Texas",
+      "starter_named": true,
+      "starter": "Arch Manning",
+      "backup": "Competition among KJ Lacey, Dia Bell, MJ Morris",
+      "note": "Minor offseason foot surgery limited spring reps but does not affect fall camp availability.",
+      "source_url": "https://www.kxan.com/sports-general/horns-report/the-next-step-for-arch-manning-texas-qb-room-in-2026/",
+      "confidence": "reported"
+    },
+    {
+      "team": "LSU",
+      "starter_named": true,
+      "starter": "Sam Leavitt",
+      "backup": "Not specified in available reports",
+      "note": "Transfer QB, returning from an injury, looked good in Day 1 team drills under new coach Lane Kiffin.",
+      "source_url": "https://www.tigerrag.com/live-lane-kiffin-recaps-first-day-of-lsu-fall-camp/",
+      "confidence": "reported"
+    },
+    {
+      "team": "Florida",
+      "starter_named": false,
+      "starter": "",
+      "backup": "",
+      "note": "Open QB competition under new coach Jon Sumrall, to be decided via Aug 15 and Aug 22 scrimmages.",
+      "source_url": "https://247sports.com/college/florida/longformarticle/florida-gators-football-everything-jon-sumrall-said-open-2026-fall-camp-288709093/",
+      "confidence": "reported"
+    },
+    {
+      "team": "Ohio State",
+      "starter_named": true,
+      "starter": "Julian Sayin",
+      "backup": "Not specified in available reports",
+      "note": "First unequivocal returning starting QB for OSU since 2022; entering year two as starter.",
+      "source_url": "https://247sports.com/college/ohio-state/article/ohio-state-football-julian-sayin-becomes-ryan-days-third-returning-starting-qb-and-hes-not-wasting-the-opportunity-288734832/",
+      "confidence": "reported"
+    },
+    {
+      "team": "Oregon",
+      "starter_named": true,
+      "starter": "Dante Moore",
+      "backup": "Not specified in available reports",
+      "note": "Forwent 2026 NFL Draft to return for year two as starter.",
+      "source_url": "https://www.si.com/college/oregon/football/oregon-ducks-quarterback-dante-moore-biggest-question-nfl-draft-decision",
+      "confidence": "reported"
+    },
+    {
+      "team": "Ole Miss",
+      "starter_named": true,
+      "starter": "Trinidad Chambliss",
+      "backup": "Not specified in available reports",
+      "note": "Eligibility litigation resolved in his favor for 2026; preseason All-SEC first team, joint Heisman campaign with RB Kewan Lacy.",
+      "source_url": "https://247sports.com/college/ole-miss/article/ole-miss-qb-trinidad-chambliss-talks-celebrity-like-status-in-oxford-receiving-overhaul-and-stamping-a-legacy-in-2026-288758904/",
+      "confidence": "reported"
+    },
+    {
+      "team": "Indiana",
+      "starter_named": true,
+      "starter": "Josh Hoover",
+      "backup": "Not specified in available reports",
+      "note": "TCU transfer replacing Heisman winner/No. 1 draft pick Fernando Mendoza; coach Cignetti's early comments are positive but generic, unproven quantity at this point in camp.",
+      "source_url": "https://www.si.com/college/indiana/football/indiana-football-fall-camp-thoughts",
+      "confidence": "reported"
+    },
+    {
+      "team": "Miami",
+      "starter_named": true,
+      "starter": "Darian Mensah",
+      "backup": "Luke Nickel",
+      "note": "Duke transfer, led Power 4 in passing yards and won ACC title with Duke; clear starter entering camp.",
+      "source_url": "https://www.si.com/college/miami/football/will-anyone-s-rank-rise-in-miami-s-depth-chart-ahead-of-fall-camp",
+      "confidence": "reported"
+    },
+    {
+      "team": "Oklahoma",
+      "starter_named": true,
+      "starter": "John Mateer",
+      "backup": "Not specified in available reports",
+      "note": "Returning starter (12 starts in 2025); reported fully healthy and physically transformed entering camp.",
+      "source_url": "https://www.on3.com/teams/oklahoma-sooners/news/inside-ou-fall-camp-why-jason-witten-is-really-impressed-with-quarterback-john-mateer/",
+      "confidence": "reported"
+    },
+    {
+      "team": "Texas Tech",
+      "starter_named": true,
+      "starter": "Brendan Sorsby (season-long); Will Hammond starts first two games",
+      "backup": "Will Hammond",
+      "note": "Sorsby is suspended for the first two games of 2026 under injunction terms tied to an NCAA gambling investigation; Hammond, healthy and back from his own injury, is expected to start those games.",
+      "source_url": "https://www.espn.com/college-football/story/_/id/49000177/brendan-sorsby-granted-injunction-vs-ncaa-eligible-play-2026",
+      "confidence": "verified"
+    },
+    {
+      "team": "Penn State",
+      "starter_named": true,
+      "starter": "Alex Manske",
+      "backup": "Not specified in available reports",
+      "note": "Missed spring ball after an undisclosed medical procedure; fully cleared entering fall camp.",
+      "source_url": "https://247sports.com/college/penn-state/longformarticle/penn-state-football-injury-updates-preseason-camp-potential-impact-288643467/",
+      "confidence": "reported"
+    },
+    {
+      "team": "Michigan",
+      "starter_named": true,
+      "starter": "Bryce Underwood",
+      "backup": "Not specified in available reports",
+      "note": "Entering year two as starter under new coach Kyle Whittingham (see team-level correction: Whittingham is at Michigan, not Washington); coach says QB has 'catching up to do fundamentally' but is excited for his development.",
+      "source_url": "https://buckeyesports.com/big-ten-crossover-head-coach-kyle-whittingham-said-bryce-underwood-had-catching-up-to-do-fundamentally-excited-for-qbs-second-season/",
+      "confidence": "reported"
+    }
+  ],
+  "gaps": [
+    "Research brief stated 'Kyle Whittingham at Washington' as a new coach — this is incorrect. Whittingham is Michigan's new head coach in 2026. Washington's actual head coach is third-year Jedd Fisch, not a new hire; no notable Washington camp news (positive or negative) was verified this cycle beyond a routine 'study hall' Day 1.",
+    "Week 0 international/neutral-site games not individually researched due to tool budget: North Carolina vs TCU (Dublin), NC State vs Virginia (Rio de Janeiro), Hawai'i at Stanford, Memphis at UNLV. No camp signal, injury, or QB news verified for these programs this cycle.",
+    "Georgia camp news (9.5 win total team) not researched this cycle — budget constraint.",
+    "Trinidad Chambliss eligibility case: 'resolved' above reflects his current cleared status for 2026 under a standing court injunction; the underlying NCAA litigation was still described as ongoing/being litigated in the sourced reporting, so this could still change.",
+    "Exact positions for Penn State's Jeremiah Cooper and Alex Tatsch (both recovering from injury) could not be confirmed from available source text; included with position marked 'unconfirmed' rather than guessed.",
+    "Only Day 1 fall-camp observations were available for most teams (camp opened Aug 4-6, 2026); several 'positive camp signal' entries (LSU, Texas, Arch Manning, Michigan) reflect a single practice and could shift as camp progresses."
+  ]
+}
