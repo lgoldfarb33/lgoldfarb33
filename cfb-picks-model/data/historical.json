@@ -1,0 +1,199 @@
+{
+  "thread": "historical",
+  "as_of": "2026-08-07",
+  "new_coach_trends": [
+    {
+      "archetype": "all new FBS head coaches (aggregate)",
+      "sample_description": "Multiple attempts (WebSearch across actionnetwork, covers, sportsoddshistory, betmgm, cbssports, oddsshark, teamrankings, sportsbookreview) turned up no publicly available aggregate ATS record for first-year FBS head coaches. One low-quality search snippet asserted 'first-year head coaches consistently go under .500 ATS in their debut preseason games' with zero record cited and referenced NFL Thursday Night Football (8-20 ATS) as its only number, which is off-topic (NFL, not CFB) and not usable.",
+      "ats_record": "",
+      "ats_pct": null,
+      "win_total_tendency": "neutral",
+      "early_vs_late_split": "No sourced CFB-specific split found. Widely repeated football-analytics folk wisdom (installing a new system/scheme takes reps, staffs 'find themselves' in November) supports a slow-start-then-improve pattern, but I could not find a numeric ATS or SU split backing it for college football specifically.",
+      "type": "structural",
+      "directional": true,
+      "applies_to_2026_teams": ["all ~30 new 2026 FBS HCs"],
+      "source_url": "",
+      "confidence": "inferred"
+    },
+    {
+      "archetype": "G5 HC -> P4 HC (Sumrall/Florida archetype)",
+      "sample_description": "No sourced ATS or win-total data found for this specific archetype after targeted searching. NCAA.com and Fox Sports pieces on 'best first-year coach seasons' are straight-up win-loss retrospectives (e.g. Jerry Mack winning the C-USA title in Year 1 at a team that was last in-conference the year before), not betting data, and they are not G5-to-P4 moves.",
+      "ats_record": "",
+      "ats_pct": null,
+      "win_total_tendency": "neutral",
+      "early_vs_late_split": "",
+      "type": "structural",
+      "directional": true,
+      "applies_to_2026_teams": ["Florida (Jon Sumrall, ex-Tulane)"],
+      "source_url": "",
+      "confidence": "inferred"
+    },
+    {
+      "archetype": "established P4 HC -> different P4 job (Kiffin/LSU, Whittingham/Washington archetype)",
+      "sample_description": "No ATS data sourced. The one relevant, dated (2026) empirical nugget is a market-pricing observation, not a performance trend: a cited analyst noted 'post-Kiffin bias' depressing Ole Miss's 2026 win total to 7.5 even though Ole Miss was a CFP semifinalist the prior year -- i.e. the market is markedly skeptical of the program Kiffin LEFT, which is a market-bias data point, not a trend about how Kiffin himself performs at his new job (LSU).",
+      "ats_record": "",
+      "ats_pct": null,
+      "win_total_tendency": "neutral",
+      "early_vs_late_split": "",
+      "type": "structural",
+      "directional": true,
+      "applies_to_2026_teams": ["LSU (Kiffin)", "Washington (Whittingham)", "Ole Miss (post-Kiffin market skepticism)"],
+      "source_url": "https://www.cbssports.com/college-football/news/2026-college-football-win-totals-bettors-again-overly-optimistic-on-deion-sanders-colorado-buffaloes/",
+      "confidence": "reported"
+    },
+    {
+      "archetype": "high-hype rebuild hire, brand/coach-name driven public optimism (Deion Sanders/Colorado-style)",
+      "sample_description": "2026-specific, sourced market-bias note (not a historical ATS trend, but directly relevant to how new-coach hype prices into win totals): at Colorado's win total of 4.5, 'no team is taking more Over win total tickets than Colorado... and only Oklahoma is taking a bigger lean nationally on Over wins via handle,' despite Colorado turning over 66 new players and new coordinators -- i.e. the market is pricing the coach-narrative, not the roster churn.",
+      "ats_record": "",
+      "ats_pct": null,
+      "win_total_tendency": "over",
+      "early_vs_late_split": "",
+      "type": "empirical",
+      "directional": true,
+      "applies_to_2026_teams": ["Colorado (Deion Sanders)"],
+      "source_url": "https://www.cbssports.com/college-football/news/2026-college-football-win-totals-bettors-again-overly-optimistic-on-deion-sanders-colorado-buffaloes/",
+      "confidence": "reported"
+    }
+  ],
+  "situational_factors": [
+    {
+      "factor": "week_0_prep",
+      "description": "Counter-intuitive sourced trend: it is the team playing ITS season opener (no games played yet) that has the ATS edge over an opponent that has already played a game -- not the reverse. 'FBS teams playing their season opener against an opponent that has already played have fared 56-33 ATS (62.9%) since 2005.' Read for 2026: a Week 0 participant's NEXT game (their Week-1-of-the-schedule slot, typically the following Saturday) against a team making ITS debut that week is a spot to lean toward the debuting opponent, not the Week 0 team -- the market appears to overvalue the extra look/experience of the team that already played.",
+      "historical_basis": "56-33 ATS (62.9%) for season-opening teams facing an opponent with a game already under its belt, since 2005 (per an actionnetwork.com Week 1 trends piece).",
+      "ats_effect": "Favors the team playing its first game of the season over an opponent that already played, ATS.",
+      "type": "empirical",
+      "applies_to_games": [
+        {"matchup": "Any 2026 Week 0 participant's following game vs. a team playing its own opener", "date": "~Sep 5, 2026 (exact pairings TBD -- outside this thread's scope)", "why": "Week 0 (Aug 29) participants include UNC, TCU, NC State, Virginia, USC, San Jose State, Hawai'i, Stanford, Memphis, UNLV. If any of these teams' next game is against an opponent playing its own season opener, the 56-33 ATS trend favors the debuting opponent."}
+      ],
+      "source_url": "https://www.actionnetwork.com/ncaaf/college-football-betting-trends-week-1-angle-week-2-lookaheads",
+      "confidence": "reported"
+    },
+    {
+      "factor": "international_travel",
+      "description": "College football has been played in Dublin, Ireland nine times since 1988 (Boston College-Army 1988, Pitt-Rutgers 1989, Notre Dame-Navy 2012, Penn State-UCF 2014, and yearly since 2022 including Notre Dame-Navy 2024 [ND won 42-3], Florida State-Georgia Tech 2024 [Georgia Tech, the underdog, won 24-21 on a walk-off FG], and Kansas State-Iowa State 2025 [Iowa State won 24-21]). Results are mixed -- favorites and underdogs have both won -- and I found no published aggregate ATS record for these games; the sample is too small (9 games across decades, different rulesets/eras) to responsibly derive a percentage. Multiple outlets reference jet lag and 'sloppy Irish weather' as recurring themes and note some of these teams have struggled in the game immediately AFTER returning from Ireland, but again with no cited record.",
+      "historical_basis": "9 historical Dublin games (1988-2025) with directional narrative (jet lag, travel fatigue) but no sourced ATS split.",
+      "ats_effect": "Unknown/unsourced. Directional-only: expect suppressed offensive execution and possible letdown-style fatigue in the following game, not a proven backable number.",
+      "type": "structural",
+      "applies_to_games": [
+        {"matchup": "North Carolina vs TCU", "date": "2026-08-29", "why": "Dublin, Ireland neutral site, Week 0. Both teams face equal long-haul travel/jet lag, so the historical Dublin factor is more relevant to each team's SUBSEQUENT game than to this one."}
+      ],
+      "source_url": "https://www.yardbarker.com/college_football/articles/why_is_there_a_college_football_game_in_ireland_the_history_behind_the_emerald_isle_classic/s1_13132_40785800",
+      "confidence": "reported"
+    },
+    {
+      "factor": "neutral_site",
+      "description": "NC State vs Virginia in Rio de Janeiro, Brazil is the first CFB game ever played in South America. There is no prior CFB game on that continent, no comparable long-haul travel precedent to South America (different time zone shift, climate, and altitude profile than the Dublin games), and therefore no historical base rate exists. Any edge here is pure structural reasoning (longer/less-precedented travel, unfamiliar climate, no local fan familiarity for either side) rather than data.",
+      "historical_basis": "None -- explicitly a no-analog situation.",
+      "ats_effect": "Unknown -- no historical basis to estimate a number.",
+      "type": "structural",
+      "applies_to_games": [
+        {"matchup": "NC State vs Virginia", "date": "2026-08-29", "why": "Rio de Janeiro, Brazil -- first CFB game in South America, zero historical precedent for either team's travel/performance response."}
+      ],
+      "source_url": "",
+      "confidence": "inferred"
+    },
+    {
+      "factor": "time_zone",
+      "description": "Conference realignment has put West Coast programs (former Pac-12 members now in the Big Ten) into a routine of cross-country travel and early-afternoon-body-clock kickoffs (noon ET = 9am local) that did not exist pre-realignment, and vice versa for eastern teams traveling west. No CFB-specific sourced ATS trend was found for this in the time available; this is standard travel/circadian reasoning carried over from documented NFL/NBA West-to-East early-kickoff struggles, applied to CFB by analogy, not by direct sourcing.",
+      "historical_basis": "None sourced directly for CFB; inferred by analogy to other sports' documented early body-clock kickoff effects.",
+      "ats_effect": "Directional: modest fade candidate for West Coast (former Pac-12) teams playing true early local-time kickoffs in the Big Ten's Eastern/Central-heavy TV windows.",
+      "type": "structural",
+      "applies_to_games": [
+        {"matchup": "Any former Pac-12 team (Oregon, Washington, USC, UCLA) playing a noon-ET Big Ten kickoff", "date": "2026 season, various", "why": "9am local body-clock kickoff plus realignment-driven cross-country travel that is now a weekly occurrence rather than a rare occasion."}
+      ],
+      "source_url": "",
+      "confidence": "inferred"
+    },
+    {
+      "factor": "weather",
+      "description": "Early-September kickoffs in the Southern/Gulf Coast/Texas footprint routinely see on-field heat indices well above 90-100F, which is broadly cited across football analytics writing as a drag on offensive tempo and total scoring pace (more clock-management, more hydration stoppages, more fatigue-driven late-game execution drop-off). I was not able to source a specific CFB total-under hit-rate number tied to heat in the time budgeted for this thread; treat this as a well-supported directional lean, not a hard percentage.",
+      "historical_basis": "General sports-science/analytics consensus that extreme heat suppresses live-ball plays per game and tempo; no CFB-specific cited under/over hit rate found.",
+      "ats_effect": "Directional lean toward game totals playing UNDER in high-heat-index early-September Southern kickoffs, especially day games.",
+      "type": "structural",
+      "applies_to_games": [
+        {"matchup": "Any early-afternoon Week 0/Week 1 kickoff in the Deep South/Texas/Florida footprint", "date": "2026-08-29 through 2026-09-05", "why": "Late-August/early-September heat indices in the Gulf South are historically among the highest of the season."}
+      ],
+      "source_url": "",
+      "confidence": "inferred"
+    },
+    {
+      "factor": "short_rest",
+      "description": "No CFB-specific sourced ATS data found on Thursday/Friday-opener-into-Saturday short-rest situations for the season opener itself (this typically matters more mid-season, e.g. Thursday conference games). For true Week 1 openers, essentially every team is on equal (full offseason) rest, so this factor has limited bite in Week 0/Week 1 specifically -- flagging as low-relevance for this window rather than fabricating an effect.",
+      "historical_basis": "None found; also structurally low-relevance since Week 0/1 rest is roughly equalized across teams.",
+      "ats_effect": "Minimal expected effect in Week 0/Week 1 specifically.",
+      "type": "structural",
+      "applies_to_games": [],
+      "source_url": "",
+      "confidence": "inferred"
+    }
+  ],
+  "market_biases": [
+    {
+      "bias": "brand-name / hype-coach win-total inflation",
+      "description": "2026-specific sourced example: Colorado's 4.5 win total is drawing the single most lopsided Over betting nationally at one book (behind only Oklahoma), despite the roster turning over 66 new players and new coordinators under Deion Sanders -- i.e. bettors are pricing the coach/brand narrative ahead of the actual on-field personnel continuity.",
+      "direction": "over",
+      "type": "empirical",
+      "exploitable_in_2026": "Treat public Over money on marquee/media-magnet coaching hires (Colorado, and by extension other high-hype 2026 hires) with skepticism relative to the roster fundamentals; the win-total market has repeatedly shown it pays for storyline over personnel.",
+      "source_url": "https://www.cbssports.com/college-football/news/2026-college-football-win-totals-bettors-again-overly-optimistic-on-deion-sanders-colorado-buffaloes/",
+      "confidence": "reported"
+    },
+    {
+      "bias": "reputation-program win-total skepticism after a coach departs",
+      "description": "2026-specific: Ole Miss's win total was set at 7.5 with an analyst-noted 'post-Kiffin bias' -- the market doesn't credit the Rebels to reach 8-4 even though the program was a CFP semifinalist the year before Kiffin left for LSU.",
+      "direction": "under (public perception discounts a program once its star coach leaves, potentially creating value on the Over if the roster/system carries over)",
+      "type": "empirical",
+      "exploitable_in_2026": "Possible Over value on Ole Miss's win total if the underlying roster/system (not just the departed coach) drives outcomes; needs corroboration from the Team-thread's roster analysis.",
+      "source_url": "https://www.cbssports.com/college-football/news/2026-college-football-win-totals-bettors-again-overly-optimistic-on-deion-sanders-colorado-buffaloes/",
+      "confidence": "reported"
+    },
+    {
+      "bias": "favorites cover close to a coin flip long-run, underdogs slightly better",
+      "description": "Multiple cited figures converge on the same picture: favorites covered 51.16% in the 2021 season (442-422 ATS); since 2005, CFB underdogs cover 50.3% of games long-run; in the 2025 regular season underdogs covered only 49% against the closing line (worst dog cover rate in six years, 409-390 ATS cited for 'last season'). Net: the ATS market is close to efficient at the season aggregate level, with underdog cover rates trending down recently.",
+      "direction": "neutral (near coin-flip, slight recent favorite lean)",
+      "type": "empirical",
+      "exploitable_in_2026": "No standing exploitable edge from favorite/dog status alone; any 2026 edge has to come from situational factors (new coach, travel, weather, etc.) layered on top, not from blindly fading favorites or backing dogs.",
+      "source_url": "https://sports.betmgm.com/en/blog/college-football/how-often-do-college-football-underdogs-cover-spread-ncaaf-bm06/",
+      "confidence": "reported"
+    },
+    {
+      "bias": "fading heavy public sides",
+      "description": "General betting-market research (not CFB-specific) cited that fading a 70%+ public side wins only ~50-52% long run, not enough to beat the vig; fading only shows a real edge at the extremes -- 80%+ of bets combined with the line actually moving toward the public side (which is rare), or on totals in nationally televised primetime games where casual money reflexively stacks the Over.",
+      "direction": "neutral (fading the public is not a standing edge by itself)",
+      "type": "structural",
+      "exploitable_in_2026": "Applicable narrowly to primetime Week 0/Week 1 showcase games (Dublin, Rio, and other televised marquee openers) where public over-money on the total is a plausible fade candidate -- not a general rule.",
+      "source_url": "",
+      "confidence": "inferred"
+    },
+    {
+      "bias": "season-opener vanilla gameplans suppressing totals",
+      "description": "Teams facing an overmatched nonconference opener frequently hold back playbook install (limiting tape given to future opponents, protecting starters from injury) which skews toward conservative play-calling and lower scoring than the total might project; one cited game example showed 71% of bets and 86% of money on the Under. No aggregate season-wide CFB opener-Under hit rate was sourced, so this remains a described tendency, not a hard number.",
+      "direction": "under",
+      "type": "structural",
+      "exploitable_in_2026": "Relevant to Week 0/Week 1 games with a lopsided mismatch (e.g. USC vs San Jose State, Memphis at UNLV) where the favorite has no incentive to open up its gameplan.",
+      "source_url": "",
+      "confidence": "inferred"
+    },
+    {
+      "bias": "G5 favorites/underdogs ATS tendencies",
+      "description": "Searched specifically for a sourced G5-vs-P4 or G5-favorite cover-rate trend and found only individual weekly pick columns (Underdog Dynasty, HERO Sports 'G5 underdog of the week' features), not an aggregated historical percentage. No usable number found.",
+      "direction": "unknown",
+      "type": "structural",
+      "exploitable_in_2026": "None identified with sourcing; flagged as a gap below.",
+      "source_url": "",
+      "confidence": "inferred"
+    }
+  ],
+  "no_analog": [
+    "NC State vs Virginia in Rio de Janeiro, Brazil (2026-08-29) is the first CFB game ever played in South America -- there is no historical CFB precedent for South American travel, climate, altitude, or crowd/atmosphere effects on either program.",
+    "The scale of this coaching-change cycle (~30 new FBS HCs, 17 at Power Four in a single offseason) is unusually large; while individual coaching changes have long histories, I found no sourced study benchmarking a coaching-turnover cycle of this specific magnitude against prior cycles.",
+    "SEC's first-ever 9-game conference schedule (2026) has no in-conference historical analog for the SEC specifically; any comparison to other conferences' 9-game-schedule adoption (e.g. Big Ten, ACC) is a structural analogy, not a direct SEC data point."
+  ],
+  "gaps": [
+    "No sourced aggregate ATS record for first-year FBS head coaches (overall, or broken into promoted-internal vs outside-hire, G5-to-P4, P4-to-P4, coordinator-to-first-time-HC, or rebuild-vs-reload archetypes) despite multiple targeted searches across actionnetwork, covers, sportsoddshistory, oddsshark, teamrankings, betmgm, and cbssports. This is the single biggest hole against the stated #1 priority of this thread.",
+    "No sourced early-season-vs-late-season ATS split for new coaching staffs specifically in CFB (only unsourced directional folk wisdom).",
+    "No aggregate ATS record for CFB games played in Dublin, Ireland (9-game sample found via search, results listed individually, but no published cover percentage).",
+    "No CFB-specific sourced hit rate for opener totals going Under, for heat-driven Under rates in early-September Southern games, or for large-spread-opener backup-QB/running-clock cover suppression -- all recorded as structural/directional only per the hard rule against fabricating precision.",
+    "No G5-specific favorite/underdog aggregate ATS cover rate sourced.",
+    "Multiple candidate source domains (Wikipedia, CBS Sports, BetMGM, Yardbarker, 247Sports, Grokipedia, qctimes.com, bet365 news, Action Network direct fetch) returned EGRESS_BLOCKED on direct WebFetch in this environment; all figures above that cite these outlets were captured via WebSearch result snippets rather than full-article fetch, so some nuance/context from the original articles may be missing."
+  ]
+}
