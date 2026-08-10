@@ -1,0 +1,46 @@
+{
+  "synthetic": true,
+  "true_ratings": {
+    "Anchor State": -22.01,
+    "Basalt Tech": -15.02,
+    "Cedar A&M": 7.27,
+    "Dune Valley": 14.46,
+    "Ember City": 9.17,
+    "Foxglove U": 9.74,
+    "Granite Bay": 2.02,
+    "Harbor Point": -4.18,
+    "Ironwood": 0.5,
+    "Juniper State": 9.93,
+    "Kestrel College": -3.55,
+    "Lantern Hill": -0.86,
+    "Marrow University": 16.82,
+    "Nettle State": -6.29,
+    "Obsidian A&M": -8.56,
+    "Pinnacle West": -9.44
+  },
+  "book_ratings": {
+    "Anchor State": -22.01,
+    "Basalt Tech": -15.02,
+    "Cedar A&M": 10.27,
+    "Dune Valley": 14.46,
+    "Ember City": 9.17,
+    "Foxglove U": 9.74,
+    "Granite Bay": 2.02,
+    "Harbor Point": -7.18,
+    "Ironwood": 0.5,
+    "Juniper State": 9.93,
+    "Kestrel College": -3.55,
+    "Lantern Hill": 2.14,
+    "Marrow University": 16.82,
+    "Nettle State": -6.29,
+    "Obsidian A&M": -8.56,
+    "Pinnacle West": -9.44
+  },
+  "true_hfa": 2.6,
+  "book_error": {
+    "Cedar A&M": 3.0,
+    "Harbor Point": -3.0,
+    "Lantern Hill": 3.0
+  },
+  "note": "Ground truth for validation; the engine never reads this file. book_error is what the market has wrong \u2014 recoverable only via the thread adjustment layer, since ratings are solved from the book's own spreads."
+}

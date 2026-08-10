@@ -1,0 +1,30 @@
+{
+  "thread": "sentiment",
+  "synthetic": true,
+  "teams": [
+    {
+      "team": "Cedar A&M",
+      "score": -2,
+      "sources": [
+        "fixture://sentiment/Cedar A&M"
+      ],
+      "justification": "Synthetic: independent corroboration of a +3.0 pt book error"
+    },
+    {
+      "team": "Harbor Point",
+      "score": 2,
+      "sources": [
+        "fixture://sentiment/Harbor Point"
+      ],
+      "justification": "Synthetic: independent corroboration of a -3.0 pt book error"
+    },
+    {
+      "team": "Lantern Hill",
+      "score": -2,
+      "sources": [
+        "fixture://sentiment/Lantern Hill"
+      ],
+      "justification": "Synthetic: independent corroboration of a +3.0 pt book error"
+    }
+  ]
+}

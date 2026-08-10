@@ -1,0 +1,299 @@
+{
+  "generated": "2026-08-10T15:17:11+00:00",
+  "disclaimer": "Not financial advice. Research output for entertainment and analysis.",
+  "SYNTHETIC": false,
+  "source": "real-market",
+  "as_of": "2026-08-07",
+  "ratings": {
+    "n_teams": 22,
+    "n_games": 11,
+    "ridge": 2.0,
+    "hfa": 2.5,
+    "hfa_fitted": false,
+    "residual_sd": 6.567,
+    "effective_dof": 6.0,
+    "warnings": [
+      "Fitted HFA 18.7 is outside the plausible range (0.0, 6.0) \u2014 the game set is too small or too lopsided to identify it. Falling back to 2.5.",
+      "Effective dof 6.0 vs 23 parameters \u2014 ridge=2.0 is shrinking ratings substantially; margins and edges will be understated",
+      "22/22 teams have fewer than 3 observed games; their ratings are weakly identified and are gated out of picks"
+    ],
+    "table": [
+      {
+        "team": "Texas A&M",
+        "rating": 4.94,
+        "market_rating": 4.94,
+        "adjustment": 0.0,
+        "games_observed": 1,
+        "std_error": 3.97,
+        "identified": false
+      },
+      {
+        "team": "Texas",
+        "rating": 4.19,
+        "market_rating": 3.19,
+        "adjustment": 1.0,
+        "games_observed": 1,
+        "std_error": 3.97,
+        "identified": false
+      },
+      {
+        "team": "Memphis",
+        "rating": 3.93,
+        "market_rating": 3.93,
+        "adjustment": 0.0,
+        "games_observed": 1,
+        "std_error": 3.97,
+        "identified": false
+      },
+      {
+        "team": "USC",
+        "rating": 3.44,
+        "market_rating": 4.19,
+        "adjustment": -0.75,
+        "games_observed": 1,
+        "std_error": 3.97,
+        "identified": false
+      },
+      {
+        "team": "Louisville",
+        "rating": 3.06,
+        "market_rating": 3.06,
+        "adjustment": 0.0,
+        "games_observed": 1,
+        "std_error": 3.97,
+        "identified": false
+      },
+      {
+        "team": "Baylor",
+        "rating": 2.93,
+        "market_rating": 2.93,
+        "adjustment": 0.0,
+        "games_observed": 1,
+        "std_error": 3.97,
+        "identified": false
+      },
+      {
+        "team": "Colorado",
+        "rating": 2.93,
+        "market_rating": 2.93,
+        "adjustment": 0.0,
+        "games_observed": 1,
+        "std_error": 3.97,
+        "identified": false
+      },
+      {
+        "team": "Florida State",
+        "rating": 2.44,
+        "market_rating": 2.44,
+        "adjustment": 0.0,
+        "games_observed": 1,
+        "std_error": 3.97,
+        "identified": false
+      },
+      {
+        "team": "Clemson",
+        "rating": 1.93,
+        "market_rating": 1.93,
+        "adjustment": 0.0,
+        "games_observed": 1,
+        "std_error": 3.97,
+        "identified": false
+      },
+      {
+        "team": "TCU",
+        "rating": 1.62,
+        "market_rating": 1.62,
+        "adjustment": 0.0,
+        "games_observed": 1,
+        "std_error": 3.9,
+        "identified": false
+      },
+      {
+        "team": "Virginia",
+        "rating": 1.13,
+        "market_rating": 1.13,
+        "adjustment": 0.0,
+        "games_observed": 1,
+        "std_error": 3.9,
+        "identified": false
+      },
+      {
+        "team": "LSU",
+        "rating": 0.82,
+        "market_rating": -1.93,
+        "adjustment": 2.75,
+        "games_observed": 1,
+        "std_error": 3.97,
+        "identified": false
+      },
+      {
+        "team": "Ole Miss",
+        "rating": -0.31,
+        "market_rating": -3.06,
+        "adjustment": 2.75,
+        "games_observed": 1,
+        "std_error": 3.97,
+        "identified": false
+      },
+      {
+        "team": "NC State",
+        "rating": -1.12,
+        "market_rating": -1.12,
+        "adjustment": 0.0,
+        "games_observed": 1,
+        "std_error": 3.9,
+        "identified": false
+      },
+      {
+        "team": "North Carolina",
+        "rating": -1.63,
+        "market_rating": -1.63,
+        "adjustment": 0.0,
+        "games_observed": 1,
+        "std_error": 3.9,
+        "identified": false
+      },
+      {
+        "team": "New Mexico State",
+        "rating": -2.44,
+        "market_rating": -2.44,
+        "adjustment": 0.0,
+        "games_observed": 1,
+        "std_error": 3.97,
+        "identified": false
+      },
+      {
+        "team": "Georgia Tech",
+        "rating": -2.93,
+        "market_rating": -2.93,
+        "adjustment": 0.0,
+        "games_observed": 1,
+        "std_error": 3.97,
+        "identified": false
+      },
+      {
+        "team": "Texas State",
+        "rating": -3.19,
+        "market_rating": -3.19,
+        "adjustment": 0.0,
+        "games_observed": 1,
+        "std_error": 3.97,
+        "identified": false
+      },
+      {
+        "team": "Auburn",
+        "rating": -3.93,
+        "market_rating": -2.93,
+        "adjustment": -1.0,
+        "games_observed": 1,
+        "std_error": 3.97,
+        "identified": false
+      },
+      {
+        "team": "UNLV",
+        "rating": -3.93,
+        "market_rating": -3.93,
+        "adjustment": 0.0,
+        "games_observed": 1,
+        "std_error": 3.97,
+        "identified": false
+      },
+      {
+        "team": "San Jose State",
+        "rating": -4.19,
+        "market_rating": -4.19,
+        "adjustment": 0.0,
+        "games_observed": 1,
+        "std_error": 3.97,
+        "identified": false
+      },
+      {
+        "team": "Missouri State",
+        "rating": -4.94,
+        "market_rating": -4.94,
+        "adjustment": 0.0,
+        "games_observed": 1,
+        "std_error": 3.97,
+        "identified": false
+      }
+    ]
+  },
+  "adjustment_coefficients": {
+    "net_personnel": 1.0,
+    "sentiment": 0.75
+  },
+  "picks": [],
+  "skipped": [
+    {
+      "subject": "Notre Dame",
+      "reason": "no schedule to simulate"
+    },
+    {
+      "subject": "Texas Tech",
+      "reason": "no schedule to simulate"
+    },
+    {
+      "subject": "Miami",
+      "reason": "no schedule to simulate"
+    },
+    {
+      "subject": "Oregon",
+      "reason": "no schedule to simulate"
+    },
+    {
+      "subject": "Indiana",
+      "reason": "no schedule to simulate"
+    },
+    {
+      "subject": "Ohio State",
+      "reason": "no schedule to simulate"
+    },
+    {
+      "subject": "Penn State",
+      "reason": "no schedule to simulate"
+    },
+    {
+      "subject": "Texas",
+      "reason": "no schedule to simulate"
+    },
+    {
+      "subject": "Georgia",
+      "reason": "no schedule to simulate"
+    },
+    {
+      "subject": "Alabama",
+      "reason": "no schedule to simulate"
+    },
+    {
+      "subject": "LSU",
+      "reason": "no schedule to simulate"
+    },
+    {
+      "subject": "Texas A&M",
+      "reason": "no schedule to simulate"
+    },
+    {
+      "subject": "Ole Miss",
+      "reason": "no schedule to simulate"
+    },
+    {
+      "subject": "Oklahoma",
+      "reason": "no schedule to simulate"
+    },
+    {
+      "subject": "Illinois",
+      "reason": "no schedule to simulate"
+    },
+    {
+      "subject": "Northwestern",
+      "reason": "no schedule to simulate"
+    }
+  ],
+  "simulation": {
+    "available": false,
+    "reason": "No season schedule available from this source. Win-total edges require simulating a full schedule; ratings above are still usable for game lines."
+  },
+  "notes": [
+    "Derived from data/market.json (research-thread output)."
+  ]
+}

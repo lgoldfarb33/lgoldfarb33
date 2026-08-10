@@ -1,0 +1,725 @@
+{
+  "synthetic": true,
+  "games": [
+    {
+      "home": "Anchor State",
+      "away": "Basalt Tech",
+      "neutral": true,
+      "week": "1"
+    },
+    {
+      "home": "Anchor State",
+      "away": "Cedar A&M",
+      "neutral": false,
+      "week": "2"
+    },
+    {
+      "home": "Anchor State",
+      "away": "Dune Valley",
+      "neutral": false,
+      "week": "3"
+    },
+    {
+      "home": "Anchor State",
+      "away": "Ember City",
+      "neutral": false,
+      "week": "4"
+    },
+    {
+      "home": "Anchor State",
+      "away": "Foxglove U",
+      "neutral": false,
+      "week": "5"
+    },
+    {
+      "home": "Anchor State",
+      "away": "Granite Bay",
+      "neutral": false,
+      "week": "6"
+    },
+    {
+      "home": "Anchor State",
+      "away": "Harbor Point",
+      "neutral": false,
+      "week": "7"
+    },
+    {
+      "home": "Anchor State",
+      "away": "Ironwood",
+      "neutral": false,
+      "week": "8"
+    },
+    {
+      "home": "Anchor State",
+      "away": "Juniper State",
+      "neutral": false,
+      "week": "9"
+    },
+    {
+      "home": "Anchor State",
+      "away": "Kestrel College",
+      "neutral": false,
+      "week": "10"
+    },
+    {
+      "home": "Anchor State",
+      "away": "Lantern Hill",
+      "neutral": false,
+      "week": "11"
+    },
+    {
+      "home": "Basalt Tech",
+      "away": "Cedar A&M",
+      "neutral": false,
+      "week": "12"
+    },
+    {
+      "home": "Basalt Tech",
+      "away": "Dune Valley",
+      "neutral": false,
+      "week": "1"
+    },
+    {
+      "home": "Basalt Tech",
+      "away": "Ember City",
+      "neutral": false,
+      "week": "2"
+    },
+    {
+      "home": "Basalt Tech",
+      "away": "Foxglove U",
+      "neutral": false,
+      "week": "3"
+    },
+    {
+      "home": "Basalt Tech",
+      "away": "Granite Bay",
+      "neutral": false,
+      "week": "4"
+    },
+    {
+      "home": "Basalt Tech",
+      "away": "Harbor Point",
+      "neutral": false,
+      "week": "5"
+    },
+    {
+      "home": "Basalt Tech",
+      "away": "Ironwood",
+      "neutral": true,
+      "week": "6"
+    },
+    {
+      "home": "Basalt Tech",
+      "away": "Juniper State",
+      "neutral": false,
+      "week": "7"
+    },
+    {
+      "home": "Basalt Tech",
+      "away": "Kestrel College",
+      "neutral": false,
+      "week": "8"
+    },
+    {
+      "home": "Basalt Tech",
+      "away": "Lantern Hill",
+      "neutral": false,
+      "week": "9"
+    },
+    {
+      "home": "Basalt Tech",
+      "away": "Marrow University",
+      "neutral": false,
+      "week": "10"
+    },
+    {
+      "home": "Cedar A&M",
+      "away": "Dune Valley",
+      "neutral": false,
+      "week": "11"
+    },
+    {
+      "home": "Cedar A&M",
+      "away": "Ember City",
+      "neutral": false,
+      "week": "12"
+    },
+    {
+      "home": "Cedar A&M",
+      "away": "Foxglove U",
+      "neutral": false,
+      "week": "1"
+    },
+    {
+      "home": "Cedar A&M",
+      "away": "Granite Bay",
+      "neutral": false,
+      "week": "2"
+    },
+    {
+      "home": "Cedar A&M",
+      "away": "Harbor Point",
+      "neutral": false,
+      "week": "3"
+    },
+    {
+      "home": "Cedar A&M",
+      "away": "Ironwood",
+      "neutral": false,
+      "week": "4"
+    },
+    {
+      "home": "Cedar A&M",
+      "away": "Juniper State",
+      "neutral": false,
+      "week": "5"
+    },
+    {
+      "home": "Cedar A&M",
+      "away": "Kestrel College",
+      "neutral": false,
+      "week": "6"
+    },
+    {
+      "home": "Cedar A&M",
+      "away": "Lantern Hill",
+      "neutral": false,
+      "week": "7"
+    },
+    {
+      "home": "Cedar A&M",
+      "away": "Marrow University",
+      "neutral": false,
+      "week": "8"
+    },
+    {
+      "home": "Cedar A&M",
+      "away": "Nettle State",
+      "neutral": false,
+      "week": "9"
+    },
+    {
+      "home": "Dune Valley",
+      "away": "Ember City",
+      "neutral": false,
+      "week": "10"
+    },
+    {
+      "home": "Dune Valley",
+      "away": "Foxglove U",
+      "neutral": true,
+      "week": "11"
+    },
+    {
+      "home": "Dune Valley",
+      "away": "Granite Bay",
+      "neutral": false,
+      "week": "12"
+    },
+    {
+      "home": "Dune Valley",
+      "away": "Harbor Point",
+      "neutral": false,
+      "week": "1"
+    },
+    {
+      "home": "Dune Valley",
+      "away": "Ironwood",
+      "neutral": false,
+      "week": "2"
+    },
+    {
+      "home": "Dune Valley",
+      "away": "Juniper State",
+      "neutral": false,
+      "week": "3"
+    },
+    {
+      "home": "Dune Valley",
+      "away": "Kestrel College",
+      "neutral": false,
+      "week": "4"
+    },
+    {
+      "home": "Dune Valley",
+      "away": "Lantern Hill",
+      "neutral": false,
+      "week": "5"
+    },
+    {
+      "home": "Dune Valley",
+      "away": "Marrow University",
+      "neutral": false,
+      "week": "6"
+    },
+    {
+      "home": "Dune Valley",
+      "away": "Nettle State",
+      "neutral": false,
+      "week": "7"
+    },
+    {
+      "home": "Dune Valley",
+      "away": "Obsidian A&M",
+      "neutral": false,
+      "week": "8"
+    },
+    {
+      "home": "Ember City",
+      "away": "Foxglove U",
+      "neutral": false,
+      "week": "9"
+    },
+    {
+      "home": "Ember City",
+      "away": "Granite Bay",
+      "neutral": false,
+      "week": "10"
+    },
+    {
+      "home": "Ember City",
+      "away": "Harbor Point",
+      "neutral": false,
+      "week": "11"
+    },
+    {
+      "home": "Ember City",
+      "away": "Ironwood",
+      "neutral": false,
+      "week": "12"
+    },
+    {
+      "home": "Ember City",
+      "away": "Juniper State",
+      "neutral": false,
+      "week": "1"
+    },
+    {
+      "home": "Ember City",
+      "away": "Kestrel College",
+      "neutral": false,
+      "week": "2"
+    },
+    {
+      "home": "Ember City",
+      "away": "Lantern Hill",
+      "neutral": false,
+      "week": "3"
+    },
+    {
+      "home": "Ember City",
+      "away": "Marrow University",
+      "neutral": true,
+      "week": "4"
+    },
+    {
+      "home": "Ember City",
+      "away": "Nettle State",
+      "neutral": false,
+      "week": "5"
+    },
+    {
+      "home": "Ember City",
+      "away": "Obsidian A&M",
+      "neutral": false,
+      "week": "6"
+    },
+    {
+      "home": "Ember City",
+      "away": "Pinnacle West",
+      "neutral": false,
+      "week": "7"
+    },
+    {
+      "home": "Foxglove U",
+      "away": "Granite Bay",
+      "neutral": false,
+      "week": "8"
+    },
+    {
+      "home": "Foxglove U",
+      "away": "Harbor Point",
+      "neutral": false,
+      "week": "9"
+    },
+    {
+      "home": "Foxglove U",
+      "away": "Ironwood",
+      "neutral": false,
+      "week": "10"
+    },
+    {
+      "home": "Foxglove U",
+      "away": "Juniper State",
+      "neutral": false,
+      "week": "11"
+    },
+    {
+      "home": "Foxglove U",
+      "away": "Kestrel College",
+      "neutral": false,
+      "week": "12"
+    },
+    {
+      "home": "Foxglove U",
+      "away": "Lantern Hill",
+      "neutral": false,
+      "week": "1"
+    },
+    {
+      "home": "Foxglove U",
+      "away": "Marrow University",
+      "neutral": false,
+      "week": "2"
+    },
+    {
+      "home": "Foxglove U",
+      "away": "Nettle State",
+      "neutral": false,
+      "week": "3"
+    },
+    {
+      "home": "Foxglove U",
+      "away": "Obsidian A&M",
+      "neutral": false,
+      "week": "4"
+    },
+    {
+      "home": "Foxglove U",
+      "away": "Pinnacle West",
+      "neutral": false,
+      "week": "5"
+    },
+    {
+      "home": "Granite Bay",
+      "away": "Harbor Point",
+      "neutral": false,
+      "week": "6"
+    },
+    {
+      "home": "Granite Bay",
+      "away": "Ironwood",
+      "neutral": false,
+      "week": "7"
+    },
+    {
+      "home": "Granite Bay",
+      "away": "Juniper State",
+      "neutral": false,
+      "week": "8"
+    },
+    {
+      "home": "Granite Bay",
+      "away": "Kestrel College",
+      "neutral": true,
+      "week": "9"
+    },
+    {
+      "home": "Granite Bay",
+      "away": "Lantern Hill",
+      "neutral": false,
+      "week": "10"
+    },
+    {
+      "home": "Granite Bay",
+      "away": "Marrow University",
+      "neutral": false,
+      "week": "11"
+    },
+    {
+      "home": "Granite Bay",
+      "away": "Nettle State",
+      "neutral": false,
+      "week": "12"
+    },
+    {
+      "home": "Granite Bay",
+      "away": "Obsidian A&M",
+      "neutral": false,
+      "week": "1"
+    },
+    {
+      "home": "Granite Bay",
+      "away": "Pinnacle West",
+      "neutral": false,
+      "week": "2"
+    },
+    {
+      "home": "Harbor Point",
+      "away": "Ironwood",
+      "neutral": false,
+      "week": "3"
+    },
+    {
+      "home": "Harbor Point",
+      "away": "Juniper State",
+      "neutral": false,
+      "week": "4"
+    },
+    {
+      "home": "Harbor Point",
+      "away": "Kestrel College",
+      "neutral": false,
+      "week": "5"
+    },
+    {
+      "home": "Harbor Point",
+      "away": "Lantern Hill",
+      "neutral": false,
+      "week": "6"
+    },
+    {
+      "home": "Harbor Point",
+      "away": "Marrow University",
+      "neutral": false,
+      "week": "7"
+    },
+    {
+      "home": "Harbor Point",
+      "away": "Nettle State",
+      "neutral": false,
+      "week": "8"
+    },
+    {
+      "home": "Harbor Point",
+      "away": "Obsidian A&M",
+      "neutral": false,
+      "week": "9"
+    },
+    {
+      "home": "Harbor Point",
+      "away": "Pinnacle West",
+      "neutral": false,
+      "week": "10"
+    },
+    {
+      "home": "Ironwood",
+      "away": "Juniper State",
+      "neutral": false,
+      "week": "11"
+    },
+    {
+      "home": "Ironwood",
+      "away": "Kestrel College",
+      "neutral": false,
+      "week": "12"
+    },
+    {
+      "home": "Ironwood",
+      "away": "Lantern Hill",
+      "neutral": false,
+      "week": "1"
+    },
+    {
+      "home": "Ironwood",
+      "away": "Marrow University",
+      "neutral": true,
+      "week": "2"
+    },
+    {
+      "home": "Ironwood",
+      "away": "Nettle State",
+      "neutral": false,
+      "week": "3"
+    },
+    {
+      "home": "Ironwood",
+      "away": "Obsidian A&M",
+      "neutral": false,
+      "week": "4"
+    },
+    {
+      "home": "Ironwood",
+      "away": "Pinnacle West",
+      "neutral": false,
+      "week": "5"
+    },
+    {
+      "home": "Juniper State",
+      "away": "Kestrel College",
+      "neutral": false,
+      "week": "6"
+    },
+    {
+      "home": "Juniper State",
+      "away": "Lantern Hill",
+      "neutral": false,
+      "week": "7"
+    },
+    {
+      "home": "Juniper State",
+      "away": "Marrow University",
+      "neutral": false,
+      "week": "8"
+    },
+    {
+      "home": "Juniper State",
+      "away": "Nettle State",
+      "neutral": false,
+      "week": "9"
+    },
+    {
+      "home": "Juniper State",
+      "away": "Obsidian A&M",
+      "neutral": false,
+      "week": "10"
+    },
+    {
+      "home": "Juniper State",
+      "away": "Pinnacle West",
+      "neutral": false,
+      "week": "11"
+    },
+    {
+      "home": "Kestrel College",
+      "away": "Lantern Hill",
+      "neutral": false,
+      "week": "12"
+    },
+    {
+      "home": "Kestrel College",
+      "away": "Marrow University",
+      "neutral": false,
+      "week": "1"
+    },
+    {
+      "home": "Kestrel College",
+      "away": "Nettle State",
+      "neutral": false,
+      "week": "2"
+    },
+    {
+      "home": "Kestrel College",
+      "away": "Obsidian A&M",
+      "neutral": false,
+      "week": "3"
+    },
+    {
+      "home": "Kestrel College",
+      "away": "Pinnacle West",
+      "neutral": false,
+      "week": "4"
+    },
+    {
+      "home": "Lantern Hill",
+      "away": "Marrow University",
+      "neutral": false,
+      "week": "5"
+    },
+    {
+      "home": "Lantern Hill",
+      "away": "Nettle State",
+      "neutral": false,
+      "week": "6"
+    },
+    {
+      "home": "Lantern Hill",
+      "away": "Obsidian A&M",
+      "neutral": true,
+      "week": "7"
+    },
+    {
+      "home": "Lantern Hill",
+      "away": "Pinnacle West",
+      "neutral": false,
+      "week": "8"
+    },
+    {
+      "home": "Marrow University",
+      "away": "Nettle State",
+      "neutral": false,
+      "week": "9"
+    },
+    {
+      "home": "Marrow University",
+      "away": "Obsidian A&M",
+      "neutral": false,
+      "week": "10"
+    },
+    {
+      "home": "Marrow University",
+      "away": "Pinnacle West",
+      "neutral": false,
+      "week": "11"
+    },
+    {
+      "home": "Marrow University",
+      "away": "Anchor State",
+      "neutral": false,
+      "week": "12"
+    },
+    {
+      "home": "Nettle State",
+      "away": "Obsidian A&M",
+      "neutral": false,
+      "week": "1"
+    },
+    {
+      "home": "Nettle State",
+      "away": "Pinnacle West",
+      "neutral": false,
+      "week": "2"
+    },
+    {
+      "home": "Nettle State",
+      "away": "Anchor State",
+      "neutral": false,
+      "week": "3"
+    },
+    {
+      "home": "Nettle State",
+      "away": "Basalt Tech",
+      "neutral": false,
+      "week": "4"
+    },
+    {
+      "home": "Obsidian A&M",
+      "away": "Pinnacle West",
+      "neutral": false,
+      "week": "5"
+    },
+    {
+      "home": "Obsidian A&M",
+      "away": "Anchor State",
+      "neutral": false,
+      "week": "6"
+    },
+    {
+      "home": "Obsidian A&M",
+      "away": "Basalt Tech",
+      "neutral": false,
+      "week": "7"
+    },
+    {
+      "home": "Obsidian A&M",
+      "away": "Cedar A&M",
+      "neutral": false,
+      "week": "8"
+    },
+    {
+      "home": "Pinnacle West",
+      "away": "Anchor State",
+      "neutral": false,
+      "week": "9"
+    },
+    {
+      "home": "Pinnacle West",
+      "away": "Basalt Tech",
+      "neutral": false,
+      "week": "10"
+    },
+    {
+      "home": "Pinnacle West",
+      "away": "Cedar A&M",
+      "neutral": false,
+      "week": "11"
+    },
+    {
+      "home": "Pinnacle West",
+      "away": "Dune Valley",
+      "neutral": true,
+      "week": "12"
+    }
+  ]
+}

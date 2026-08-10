@@ -1,0 +1,41 @@
+{
+  "thread": "personnel",
+  "synthetic": true,
+  "team_scores": [
+    {
+      "team": "Cedar A&M",
+      "net_personnel": -2,
+      "coaching_fit": -2,
+      "roster_continuity": -2,
+      "one_line_rationale": "Synthetic: book overrates by +3.0 pts"
+    },
+    {
+      "team": "Harbor Point",
+      "net_personnel": 2,
+      "coaching_fit": 2,
+      "roster_continuity": 2,
+      "one_line_rationale": "Synthetic: book overrates by -3.0 pts"
+    },
+    {
+      "team": "Lantern Hill",
+      "net_personnel": -2,
+      "coaching_fit": -2,
+      "roster_continuity": -2,
+      "one_line_rationale": "Synthetic: book overrates by +3.0 pts"
+    }
+  ],
+  "coaching_changes": [
+    {
+      "team": "Cedar A&M",
+      "source_url": "fixture://personnel/Cedar A&M"
+    },
+    {
+      "team": "Harbor Point",
+      "source_url": "fixture://personnel/Harbor Point"
+    },
+    {
+      "team": "Lantern Hill",
+      "source_url": "fixture://personnel/Lantern Hill"
+    }
+  ]
+}
