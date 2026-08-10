@@ -96,16 +96,46 @@ market data**. `--source real-market` (using the research threads' 11 sourced sp
 correctly refuses to produce a single pick: 22 teams with 1 game each, all gated out as
 unidentified, and no schedule to simulate. That is the right answer, not a failure.
 
-To go live, allowlist in the environment's egress policy:
+### Why results work but odds do not
 
-| Host | Gives you |
+`raw.githubusercontent.com` is on the environment's **default Trusted list**, which is
+exactly why the results-based prior works while the odds API does not. Nothing was
+configured to make that happen — it was already allowed.
+
+### How to allow the odds API
+
+Network access is set per **cloud environment**, and there is no settings page or direct
+URL for it — it lives in a selector inside the session UI.
+
+1. Go to **claude.ai/code**
+2. Click the **cloud icon showing the environment name** (e.g. `Default`) in the row
+   just above the message box
+3. Hover the environment and click the **gear icon** on its right
+4. Set **Network access** to **Custom**
+5. In **Allowed domains**, one per line:
+   ```
+   api.the-odds-api.com
+   api.collegefootballdata.com
+   site.api.espn.com
+   ```
+6. **Check "Also include default list of common package managers."** Without it you lose
+   `raw.githubusercontent.com` and PyPI, which breaks the prior and the numpy/scipy
+   install — you would trade one blocker for two.
+7. Save.
+
+| Host | Unlocks |
 |---|---|
-| `api.the-odds-api.com` | live odds, all books — the key is already in `.env` |
-| `api.collegefootballdata.com` | schedules and historical results (free key required) |
-| `site.api.espn.com` | schedules and scores, no key |
+| `api.the-odds-api.com` | live odds across all books; key already in `.env` |
+| `api.collegefootballdata.com` | **2026 schedules** (free key) — the other hard blocker |
+| `site.api.espn.com` | schedules and scores, no key, useful as a fallback |
 
-Only the first is strictly required for odds. A **schedule source is what unlocks the
-simulator** — without a full-season schedule there are no win-total edges at all.
+**Changes apply to new sessions only.** Running sessions never re-read environment
+config, so start a fresh session afterward. Changing the allowed-host list also rebuilds
+the environment cache, so the first new session is slower.
+
+The odds API alone is not sufficient for win-total edges: it serves upcoming games, not
+full-season schedules. **A schedule source is what unlocks the simulator** — and
+cfbfastR-data has not published 2026 yet, which is why CFBD or ESPN matters.
 
 ## Layout
 
