@@ -19,6 +19,7 @@ import os
 from datetime import datetime, timezone
 
 from .calibrate import build_report
+from .empirical import blend, build_prior
 from .edge import evaluate
 from .independence import assess, confidence_tier
 from .ledger import Ledger, LedgerEntry, make_pick_id
@@ -125,7 +126,13 @@ def _evidence_for(team: str, personnel: dict | None, sentiment: dict | None) -> 
     return ev
 
 
-def run(source: str = "fixture", n_sims: int = 20000, bankroll_note: str = "") -> dict:
+# One unit = 1% of bankroll. Staking in units rather than raw percentages is how
+# anyone actually tracks a season, and it keeps sizing legible when bankroll moves.
+UNIT_PCT = 0.01
+
+
+def run(source: str = "fixture", n_sims: int = 20000, bankroll: float = 0.0,
+        unit_pct: float = UNIT_PCT, use_prior: bool = True) -> dict:
     snap, schedule = load_snapshot(source)
     # A synthetic run must read synthetic threads; the real ones name real teams
     # that do not exist in the fixture, so every adjustment would silently no-op
@@ -138,6 +145,25 @@ def run(source: str = "fixture", n_sims: int = 20000, bankroll_note: str = "") -
         sentiment = _read_json(os.path.join(DATA, "sentiment.json"))
 
     sol = solve_ratings(snap.games)
+
+    # Blend in the results-based prior. This is the only part of the model built
+    # from information the market did not generate, so it is the only part that can
+    # independently say the market is wrong.
+    prior_info, divergence = None, {}
+    if use_prior and not snap.synthetic:
+        fit = build_prior(DATA)
+        if fit is not None:
+            blended, divergence = blend(sol.ratings, fit.ratings, market_weight=0.75)
+            sol.ratings = blended
+            prior_info = {
+                "seasons": fit.seasons, "n_games": fit.n_games, "n_teams": fit.n_teams,
+                "measured_hfa": round(fit.hfa, 2),
+                "measured_residual_sd": round(fit.residual_sd, 2),
+                "market_weight": 0.75,
+                "note": ("Ratings fit from realized scoring margins, independent of any "
+                         "betting market. Divergence = market rating minus this prior."),
+            }
+
     adjustments = build_adjustments(personnel, sentiment)
     adjusted, applied = apply_adjustments(sol, adjustments)
 
@@ -163,6 +189,11 @@ def run(source: str = "fixture", n_sims: int = 20000, bankroll_note: str = "") -
                  for t in adjusted),
                 key=lambda r: -r["rating"]),
         },
+        "empirical_prior": prior_info,
+        "divergence": sorted(
+            ({"team": t, "market_minus_prior": round(d, 2)} for t, d in divergence.items()),
+            key=lambda r: -abs(r["market_minus_prior"]))[:20],
+        "unit_definition": {"unit_pct_of_bankroll": unit_pct, "bankroll": bankroll or None},
         "adjustment_coefficients": ADJUSTMENT_COEFFICIENTS,
         "picks": [], "skipped": [], "simulation": None, "notes": list(snap.notes),
     }
@@ -223,6 +254,9 @@ def run(source: str = "fixture", n_sims: int = 20000, bankroll_note: str = "") -
             "effective_threads": round(eff, 2),
             "independence": ind.as_dict(),
             "edge": er.as_dict(),
+            "units": round((er.stake_fraction or 0.0) / unit_pct, 2),
+            "stake_dollars": (round(bankroll * (er.stake_fraction or 0.0), 2)
+                              if bankroll else None),
         }
         result["picks"].append(pick)
 
@@ -350,6 +384,12 @@ def main() -> None:
     ap.add_argument("--source", default="fixture",
                     choices=["fixture", "odds_api", "real-market"])
     ap.add_argument("--sims", type=int, default=20000)
+    ap.add_argument("--bankroll", type=float, default=0.0,
+                    help="bankroll in dollars; prints per-bet dollar stakes")
+    ap.add_argument("--unit-pct", type=float, default=UNIT_PCT,
+                    help="fraction of bankroll per unit (default 0.01 = 1%%)")
+    ap.add_argument("--no-prior", action="store_true",
+                    help="skip the results-based prior (market-only ratings)")
     ap.add_argument("--calibrate", action="store_true", help="calibration report only")
     args = ap.parse_args()
 
@@ -359,7 +399,8 @@ def main() -> None:
         print(json.dumps(rep.as_dict(), indent=2))
         return
 
-    r = run(source=args.source, n_sims=args.sims)
+    r = run(source=args.source, n_sims=args.sims, bankroll=args.bankroll,
+            unit_pct=args.unit_pct, use_prior=not args.no_prior)
     tag = "SYNTHETIC " if r.get("SYNTHETIC") else ""
     bettable = sum(1 for p in r.get("picks", []) if p["edge"]["bettable"])
     print(f"{tag}run complete: {len(r.get('picks', []))} evaluated, {bettable} bettable, "

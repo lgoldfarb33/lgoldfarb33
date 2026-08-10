@@ -1,891 +1,399 @@
 {
-  "generated": "2026-08-10T15:19:08+00:00",
+  "generated": "2026-08-10T15:30:47+00:00",
   "disclaimer": "Not financial advice. Research output for entertainment and analysis.",
-  "SYNTHETIC": true,
-  "source": "fixture",
-  "as_of": "2026-08-10",
+  "SYNTHETIC": false,
+  "source": "real-market",
+  "as_of": "2026-08-07",
   "ratings": {
-    "n_teams": 16,
-    "n_games": 120,
-    "ridge": 0.1,
-    "hfa": 2.515,
-    "hfa_fitted": true,
-    "residual_sd": 0.681,
-    "effective_dof": 15.9,
-    "warnings": [],
+    "n_teams": 22,
+    "n_games": 11,
+    "ridge": 2.0,
+    "hfa": 4.5,
+    "hfa_fitted": false,
+    "residual_sd": 6.567,
+    "effective_dof": 6.0,
+    "warnings": [
+      "Fitted HFA 18.7 is outside the plausible range (0.0, 6.0) \u2014 the game set is too small or too lopsided to identify it. Falling back to 4.5.",
+      "Effective dof 6.0 vs 23 parameters \u2014 ridge=2.0 is shrinking ratings substantially; margins and edges will be understated",
+      "22/22 teams have fewer than 3 observed games; their ratings are weakly identified and are gated out of picks"
+    ],
     "table": [
       {
-        "team": "Marrow University",
-        "rating": 16.06,
-        "market_rating": 16.06,
+        "team": "Texas",
+        "rating": 5.37,
+        "market_rating": 4.37,
+        "adjustment": 1.0,
+        "games_observed": 1,
+        "std_error": 3.97,
+        "identified": false
+      },
+      {
+        "team": "Texas A&M",
+        "rating": 4.83,
+        "market_rating": 4.83,
         "adjustment": 0.0,
-        "games_observed": 15,
-        "std_error": 0.17,
-        "identified": true
+        "games_observed": 1,
+        "std_error": 3.97,
+        "identified": false
       },
       {
-        "team": "Dune Valley",
-        "rating": 14.4,
-        "market_rating": 14.4,
+        "team": "USC",
+        "rating": 3.82,
+        "market_rating": 4.57,
+        "adjustment": -0.75,
+        "games_observed": 1,
+        "std_error": 3.97,
+        "identified": false
+      },
+      {
+        "team": "Memphis",
+        "rating": 3.74,
+        "market_rating": 3.74,
         "adjustment": 0.0,
-        "games_observed": 15,
-        "std_error": 0.17,
-        "identified": true
+        "games_observed": 1,
+        "std_error": 3.97,
+        "identified": false
       },
       {
-        "team": "Juniper State",
-        "rating": 9.82,
-        "market_rating": 9.82,
+        "team": "Louisville",
+        "rating": 3.31,
+        "market_rating": 3.31,
         "adjustment": 0.0,
-        "games_observed": 15,
-        "std_error": 0.16,
-        "identified": true
+        "games_observed": 1,
+        "std_error": 3.97,
+        "identified": false
       },
       {
-        "team": "Foxglove U",
-        "rating": 9.53,
-        "market_rating": 9.53,
+        "team": "Clemson",
+        "rating": 2.39,
+        "market_rating": 2.39,
         "adjustment": 0.0,
-        "games_observed": 15,
-        "std_error": 0.17,
-        "identified": true
+        "games_observed": 1,
+        "std_error": 3.97,
+        "identified": false
       },
       {
-        "team": "Ember City",
-        "rating": 8.78,
-        "market_rating": 8.78,
+        "team": "Ole Miss",
+        "rating": 2.32,
+        "market_rating": -0.43,
+        "adjustment": 2.75,
+        "games_observed": 1,
+        "std_error": 3.97,
+        "identified": false
+      },
+      {
+        "team": "Florida State",
+        "rating": 2.07,
+        "market_rating": 2.07,
         "adjustment": 0.0,
-        "games_observed": 15,
-        "std_error": 0.17,
-        "identified": true
+        "games_observed": 1,
+        "std_error": 3.97,
+        "identified": false
       },
       {
-        "team": "Cedar A&M",
-        "rating": 6.77,
-        "market_rating": 10.27,
-        "adjustment": -3.5,
-        "games_observed": 15,
-        "std_error": 0.17,
-        "identified": true
-      },
-      {
-        "team": "Granite Bay",
-        "rating": 1.74,
-        "market_rating": 1.74,
+        "team": "Baylor",
+        "rating": 2.02,
+        "market_rating": 2.02,
         "adjustment": 0.0,
-        "games_observed": 15,
-        "std_error": 0.16,
-        "identified": true
+        "games_observed": 1,
+        "std_error": 3.97,
+        "identified": false
       },
       {
-        "team": "Ironwood",
-        "rating": 0.13,
-        "market_rating": 0.13,
+        "team": "TCU",
+        "rating": 1.97,
+        "market_rating": 1.97,
         "adjustment": 0.0,
-        "games_observed": 15,
-        "std_error": 0.16,
-        "identified": true
+        "games_observed": 1,
+        "std_error": 3.9,
+        "identified": false
       },
       {
-        "team": "Lantern Hill",
-        "rating": -1.16,
-        "market_rating": 2.34,
-        "adjustment": -3.5,
-        "games_observed": 15,
-        "std_error": 0.17,
-        "identified": true
+        "team": "LSU",
+        "rating": 1.94,
+        "market_rating": -0.81,
+        "adjustment": 2.75,
+        "games_observed": 1,
+        "std_error": 3.97,
+        "identified": false
       },
       {
-        "team": "Kestrel College",
-        "rating": -3.54,
-        "market_rating": -3.54,
+        "team": "Colorado",
+        "rating": 1.62,
+        "market_rating": 1.62,
         "adjustment": 0.0,
-        "games_observed": 15,
-        "std_error": 0.17,
-        "identified": true
+        "games_observed": 1,
+        "std_error": 3.97,
+        "identified": false
       },
       {
-        "team": "Harbor Point",
-        "rating": -3.89,
-        "market_rating": -7.39,
-        "adjustment": 3.5,
-        "games_observed": 15,
-        "std_error": 0.16,
-        "identified": true
-      },
-      {
-        "team": "Nettle State",
-        "rating": -6.61,
-        "market_rating": -6.61,
+        "team": "Virginia",
+        "rating": 0.95,
+        "market_rating": 0.95,
         "adjustment": 0.0,
-        "games_observed": 15,
-        "std_error": 0.17,
-        "identified": true
+        "games_observed": 1,
+        "std_error": 3.9,
+        "identified": false
       },
       {
-        "team": "Obsidian A&M",
-        "rating": -8.78,
-        "market_rating": -8.78,
+        "team": "NC State",
+        "rating": -0.81,
+        "market_rating": -0.81,
         "adjustment": 0.0,
-        "games_observed": 15,
-        "std_error": 0.17,
-        "identified": true
+        "games_observed": 1,
+        "std_error": 3.9,
+        "identified": false
       },
       {
-        "team": "Pinnacle West",
-        "rating": -9.43,
-        "market_rating": -9.43,
+        "team": "North Carolina",
+        "rating": -1.68,
+        "market_rating": -1.68,
         "adjustment": 0.0,
-        "games_observed": 15,
-        "std_error": 0.17,
-        "identified": true
+        "games_observed": 1,
+        "std_error": 3.9,
+        "identified": false
       },
       {
-        "team": "Basalt Tech",
-        "rating": -15.04,
-        "market_rating": -15.04,
+        "team": "Texas State",
+        "rating": -1.93,
+        "market_rating": -1.93,
         "adjustment": 0.0,
-        "games_observed": 15,
-        "std_error": 0.17,
-        "identified": true
+        "games_observed": 1,
+        "std_error": 3.97,
+        "identified": false
       },
       {
-        "team": "Anchor State",
-        "rating": -22.27,
-        "market_rating": -22.27,
+        "team": "Georgia Tech",
+        "rating": -2.0,
+        "market_rating": -2.0,
         "adjustment": 0.0,
-        "games_observed": 15,
-        "std_error": 0.17,
-        "identified": true
+        "games_observed": 1,
+        "std_error": 3.97,
+        "identified": false
+      },
+      {
+        "team": "UNLV",
+        "rating": -2.26,
+        "market_rating": -2.26,
+        "adjustment": 0.0,
+        "games_observed": 1,
+        "std_error": 3.97,
+        "identified": false
+      },
+      {
+        "team": "Auburn",
+        "rating": -2.95,
+        "market_rating": -1.95,
+        "adjustment": -1.0,
+        "games_observed": 1,
+        "std_error": 3.97,
+        "identified": false
+      },
+      {
+        "team": "New Mexico State",
+        "rating": -3.01,
+        "market_rating": -3.01,
+        "adjustment": 0.0,
+        "games_observed": 1,
+        "std_error": 3.97,
+        "identified": false
+      },
+      {
+        "team": "San Jose State",
+        "rating": -4.19,
+        "market_rating": -4.19,
+        "adjustment": 0.0,
+        "games_observed": 1,
+        "std_error": 3.97,
+        "identified": false
+      },
+      {
+        "team": "Missouri State",
+        "rating": -4.26,
+        "market_rating": -4.26,
+        "adjustment": 0.0,
+        "games_observed": 1,
+        "std_error": 3.97,
+        "identified": false
       }
     ]
+  },
+  "empirical_prior": {
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_games": 3132,
+    "n_teams": 136,
+    "measured_hfa": 4.5,
+    "measured_residual_sd": 17.48,
+    "market_weight": 0.75,
+    "note": "Ratings fit from realized scoring margins, independent of any betting market. Divergence = market rating minus this prior."
+  },
+  "divergence": [
+    {
+      "team": "Ole Miss",
+      "market_minus_prior": -10.52
+    },
+    {
+      "team": "UNLV",
+      "market_minus_prior": -6.68
+    },
+    {
+      "team": "Colorado",
+      "market_minus_prior": 5.25
+    },
+    {
+      "team": "Texas State",
+      "market_minus_prior": -5.08
+    },
+    {
+      "team": "Texas",
+      "market_minus_prior": -4.69
+    },
+    {
+      "team": "LSU",
+      "market_minus_prior": -4.49
+    },
+    {
+      "team": "Auburn",
+      "market_minus_prior": -3.91
+    },
+    {
+      "team": "Georgia Tech",
+      "market_minus_prior": -3.71
+    },
+    {
+      "team": "Baylor",
+      "market_minus_prior": 3.66
+    },
+    {
+      "team": "Missouri State",
+      "market_minus_prior": -2.75
+    },
+    {
+      "team": "New Mexico State",
+      "market_minus_prior": 2.27
+    },
+    {
+      "team": "Clemson",
+      "market_minus_prior": -1.85
+    },
+    {
+      "team": "Florida State",
+      "market_minus_prior": 1.5
+    },
+    {
+      "team": "USC",
+      "market_minus_prior": -1.5
+    },
+    {
+      "team": "TCU",
+      "market_minus_prior": -1.37
+    },
+    {
+      "team": "NC State",
+      "market_minus_prior": -1.24
+    },
+    {
+      "team": "Louisville",
+      "market_minus_prior": -1.0
+    },
+    {
+      "team": "Memphis",
+      "market_minus_prior": 0.78
+    },
+    {
+      "team": "Virginia",
+      "market_minus_prior": 0.71
+    },
+    {
+      "team": "Texas A&M",
+      "market_minus_prior": 0.46
+    }
+  ],
+  "unit_definition": {
+    "unit_pct_of_bankroll": 0.01,
+    "bankroll": 10000.0
   },
   "adjustment_coefficients": {
     "net_personnel": 1.0,
     "sentiment": 0.75
   },
-  "picks": [
+  "picks": [],
+  "skipped": [
     {
-      "subject": "Harbor Point",
-      "market": "win_total",
-      "side": "over",
-      "line": 5.5,
-      "book": "SyntheticBook",
-      "il_retail_only": false,
-      "projected_wins": 6.4,
-      "p10_p90": [
-        4.0,
-        9.0
-      ],
-      "tier": "high",
-      "tier_reason": "3.0 effective independent threads, price verified",
-      "effective_threads": 3.0,
-      "independence": {
-        "raw_threads": 2,
-        "effective_threads": 2.0,
-        "discount_pct": 0.0,
-        "thread_names": [
-          "personnel",
-          "sentiment"
-        ],
-        "shared_urls": [],
-        "shared_domains": [],
-        "pair_overlaps": [],
-        "notes": []
-      },
-      "edge": {
-        "subject": "Harbor Point",
-        "market": "win_total",
-        "side": "over",
-        "line": 5.5,
-        "price_american": 115,
-        "model_prob": 0.7013,
-        "market_prob": 0.4451,
-        "edge": 0.2561,
-        "ev_per_unit": 0.5077,
-        "kelly_full": 0.4415,
-        "stake_fraction": 0.05,
-        "bettable": true,
-        "reason": "edge 25.6%, quarter-Kelly stake 5.00% of bankroll"
-      }
+      "subject": "Notre Dame",
+      "reason": "no schedule to simulate"
     },
     {
-      "subject": "Lantern Hill",
-      "market": "win_total",
-      "side": "under",
-      "line": 7.5,
-      "book": "SyntheticBook",
-      "il_retail_only": false,
-      "projected_wins": 6.75,
-      "p10_p90": [
-        5.0,
-        9.0
-      ],
-      "tier": "high",
-      "tier_reason": "3.0 effective independent threads, price verified",
-      "effective_threads": 3.0,
-      "independence": {
-        "raw_threads": 2,
-        "effective_threads": 2.0,
-        "discount_pct": 0.0,
-        "thread_names": [
-          "personnel",
-          "sentiment"
-        ],
-        "shared_urls": [],
-        "shared_domains": [],
-        "pair_overlaps": [],
-        "notes": []
-      },
-      "edge": {
-        "subject": "Lantern Hill",
-        "market": "win_total",
-        "side": "under",
-        "line": 7.5,
-        "price_american": 106,
-        "model_prob": 0.6765,
-        "market_prob": 0.4646,
-        "edge": 0.2119,
-        "ev_per_unit": 0.3936,
-        "kelly_full": 0.3713,
-        "stake_fraction": 0.05,
-        "bettable": true,
-        "reason": "edge 21.2%, quarter-Kelly stake 5.00% of bankroll"
-      }
+      "subject": "Texas Tech",
+      "reason": "no schedule to simulate"
     },
     {
-      "subject": "Cedar A&M",
-      "market": "win_total",
-      "side": "under",
-      "line": 11.5,
-      "book": "SyntheticBook",
-      "il_retail_only": false,
-      "projected_wins": 10.17,
-      "p10_p90": [
-        8.0,
-        12.0
-      ],
-      "tier": "high",
-      "tier_reason": "3.0 effective independent threads, price verified",
-      "effective_threads": 3.0,
-      "independence": {
-        "raw_threads": 2,
-        "effective_threads": 2.0,
-        "discount_pct": 0.0,
-        "thread_names": [
-          "personnel",
-          "sentiment"
-        ],
-        "shared_urls": [],
-        "shared_domains": [],
-        "pair_overlaps": [],
-        "notes": []
-      },
-      "edge": {
-        "subject": "Cedar A&M",
-        "market": "win_total",
-        "side": "under",
-        "line": 11.5,
-        "price_american": -172,
-        "model_prob": 0.7927,
-        "market_prob": 0.6058,
-        "edge": 0.187,
-        "ev_per_unit": 0.2537,
-        "kelly_full": 0.4363,
-        "stake_fraction": 0.05,
-        "bettable": true,
-        "reason": "edge 18.7%, quarter-Kelly stake 5.00% of bankroll"
-      }
+      "subject": "Miami",
+      "reason": "no schedule to simulate"
     },
     {
-      "subject": "Foxglove U",
-      "market": "win_total",
-      "side": "over",
-      "line": 10.5,
-      "book": "SyntheticBook",
-      "il_retail_only": false,
-      "projected_wins": 10.79,
-      "p10_p90": [
-        9.0,
-        13.0
-      ],
-      "tier": "speculative",
-      "tier_reason": "1.0 effective threads \u2014 no real corroboration",
-      "effective_threads": 1.0,
-      "independence": {
-        "raw_threads": 0,
-        "effective_threads": 0.0,
-        "discount_pct": 0.0,
-        "thread_names": [],
-        "shared_urls": [],
-        "shared_domains": [],
-        "pair_overlaps": [],
-        "notes": [
-          "No sourced evidence supplied"
-        ]
-      },
-      "edge": {
-        "subject": "Foxglove U",
-        "market": "win_total",
-        "side": "over",
-        "line": 10.5,
-        "price_american": -143,
-        "model_prob": 0.583,
-        "market_prob": 0.5631,
-        "edge": 0.0199,
-        "ev_per_unit": -0.0093,
-        "kelly_full": -0.0133,
-        "stake_fraction": 0.0,
-        "bettable": false,
-        "reason": "edge 2.0% below 3% threshold"
-      }
+      "subject": "Oregon",
+      "reason": "no schedule to simulate"
     },
     {
-      "subject": "Ironwood",
-      "market": "win_total",
-      "side": "over",
-      "line": 7.5,
-      "book": "SyntheticBook",
-      "il_retail_only": false,
-      "projected_wins": 7.53,
-      "p10_p90": [
-        5.0,
-        10.0
-      ],
-      "tier": "speculative",
-      "tier_reason": "1.0 effective threads \u2014 no real corroboration",
-      "effective_threads": 1.0,
-      "independence": {
-        "raw_threads": 0,
-        "effective_threads": 0.0,
-        "discount_pct": 0.0,
-        "thread_names": [],
-        "shared_urls": [],
-        "shared_domains": [],
-        "pair_overlaps": [],
-        "notes": [
-          "No sourced evidence supplied"
-        ]
-      },
-      "edge": {
-        "subject": "Ironwood",
-        "market": "win_total",
-        "side": "over",
-        "line": 7.5,
-        "price_american": -114,
-        "model_prob": 0.5145,
-        "market_prob": 0.5098,
-        "edge": 0.0047,
-        "ev_per_unit": -0.0342,
-        "kelly_full": -0.039,
-        "stake_fraction": 0.0,
-        "bettable": false,
-        "reason": "edge 0.5% below 3% threshold"
-      }
+      "subject": "Indiana",
+      "reason": "no schedule to simulate"
     },
     {
-      "subject": "Ember City",
-      "market": "win_total",
-      "side": "over",
-      "line": 10.5,
-      "book": "SyntheticBook",
-      "il_retail_only": false,
-      "projected_wins": 10.59,
-      "p10_p90": [
-        9.0,
-        13.0
-      ],
-      "tier": "speculative",
-      "tier_reason": "1.0 effective threads \u2014 no real corroboration",
-      "effective_threads": 1.0,
-      "independence": {
-        "raw_threads": 0,
-        "effective_threads": 0.0,
-        "discount_pct": 0.0,
-        "thread_names": [],
-        "shared_urls": [],
-        "shared_domains": [],
-        "pair_overlaps": [],
-        "notes": [
-          "No sourced evidence supplied"
-        ]
-      },
-      "edge": {
-        "subject": "Ember City",
-        "market": "win_total",
-        "side": "over",
-        "line": 10.5,
-        "price_american": -122,
-        "model_prob": 0.5298,
-        "market_prob": 0.5261,
-        "edge": 0.0037,
-        "ev_per_unit": -0.036,
-        "kelly_full": -0.044,
-        "stake_fraction": 0.0,
-        "bettable": false,
-        "reason": "edge 0.4% below 3% threshold"
-      }
+      "subject": "Ohio State",
+      "reason": "no schedule to simulate"
     },
     {
-      "subject": "Obsidian A&M",
-      "market": "win_total",
-      "side": "under",
-      "line": 4.5,
-      "book": "SyntheticBook",
-      "il_retail_only": false,
-      "projected_wins": 4.52,
-      "p10_p90": [
-        3.0,
-        6.0
-      ],
-      "tier": "speculative",
-      "tier_reason": "1.0 effective threads \u2014 no real corroboration",
-      "effective_threads": 1.0,
-      "independence": {
-        "raw_threads": 0,
-        "effective_threads": 0.0,
-        "discount_pct": 0.0,
-        "thread_names": [],
-        "shared_urls": [],
-        "shared_domains": [],
-        "pair_overlaps": [],
-        "notes": [
-          "No sourced evidence supplied"
-        ]
-      },
-      "edge": {
-        "subject": "Obsidian A&M",
-        "market": "win_total",
-        "side": "under",
-        "line": 4.5,
-        "price_american": -113,
-        "model_prob": 0.5035,
-        "market_prob": 0.5076,
-        "edge": -0.0041,
-        "ev_per_unit": -0.0509,
-        "kelly_full": -0.0575,
-        "stake_fraction": 0.0,
-        "bettable": false,
-        "reason": "edge -0.4% below 3% threshold"
-      }
+      "subject": "Penn State",
+      "reason": "no schedule to simulate"
     },
     {
-      "subject": "Marrow University",
-      "market": "win_total",
-      "side": "over",
-      "line": 11.5,
-      "book": "SyntheticBook",
-      "il_retail_only": false,
-      "projected_wins": 11.91,
-      "p10_p90": [
-        10.0,
-        14.0
-      ],
-      "tier": "speculative",
-      "tier_reason": "1.0 effective threads \u2014 no real corroboration",
-      "effective_threads": 1.0,
-      "independence": {
-        "raw_threads": 0,
-        "effective_threads": 0.0,
-        "discount_pct": 0.0,
-        "thread_names": [],
-        "shared_urls": [],
-        "shared_domains": [],
-        "pair_overlaps": [],
-        "notes": [
-          "No sourced evidence supplied"
-        ]
-      },
-      "edge": {
-        "subject": "Marrow University",
-        "market": "win_total",
-        "side": "over",
-        "line": 11.5,
-        "price_american": -198,
-        "model_prob": 0.63,
-        "market_prob": 0.6351,
-        "edge": -0.0051,
-        "ev_per_unit": -0.0518,
-        "kelly_full": -0.1026,
-        "stake_fraction": 0.0,
-        "bettable": false,
-        "reason": "edge -0.5% below 3% threshold"
-      }
+      "subject": "Texas",
+      "reason": "no schedule to simulate"
     },
     {
-      "subject": "Basalt Tech",
-      "market": "win_total",
-      "side": "under",
-      "line": 3.5,
-      "book": "SyntheticBook",
-      "il_retail_only": false,
-      "projected_wins": 3.24,
-      "p10_p90": [
-        1.0,
-        5.0
-      ],
-      "tier": "speculative",
-      "tier_reason": "1.0 effective threads \u2014 no real corroboration",
-      "effective_threads": 1.0,
-      "independence": {
-        "raw_threads": 0,
-        "effective_threads": 0.0,
-        "discount_pct": 0.0,
-        "thread_names": [],
-        "shared_urls": [],
-        "shared_domains": [],
-        "pair_overlaps": [],
-        "notes": [
-          "No sourced evidence supplied"
-        ]
-      },
-      "edge": {
-        "subject": "Basalt Tech",
-        "market": "win_total",
-        "side": "under",
-        "line": 3.5,
-        "price_american": -173,
-        "model_prob": 0.599,
-        "market_prob": 0.6063,
-        "edge": -0.0073,
-        "ev_per_unit": -0.0548,
-        "kelly_full": -0.0947,
-        "stake_fraction": 0.0,
-        "bettable": false,
-        "reason": "edge -0.7% below 3% threshold"
-      }
+      "subject": "Georgia",
+      "reason": "no schedule to simulate"
     },
     {
-      "subject": "Granite Bay",
-      "market": "win_total",
-      "side": "under",
-      "line": 8.5,
-      "book": "SyntheticBook",
-      "il_retail_only": false,
-      "projected_wins": 8.24,
-      "p10_p90": [
-        6.0,
-        10.0
-      ],
-      "tier": "speculative",
-      "tier_reason": "1.0 effective threads \u2014 no real corroboration",
-      "effective_threads": 1.0,
-      "independence": {
-        "raw_threads": 0,
-        "effective_threads": 0.0,
-        "discount_pct": 0.0,
-        "thread_names": [],
-        "shared_urls": [],
-        "shared_domains": [],
-        "pair_overlaps": [],
-        "notes": [
-          "No sourced evidence supplied"
-        ]
-      },
-      "edge": {
-        "subject": "Granite Bay",
-        "market": "win_total",
-        "side": "under",
-        "line": 8.5,
-        "price_american": -150,
-        "model_prob": 0.5635,
-        "market_prob": 0.5734,
-        "edge": -0.0099,
-        "ev_per_unit": -0.0608,
-        "kelly_full": -0.0913,
-        "stake_fraction": 0.0,
-        "bettable": false,
-        "reason": "edge -1.0% below 3% threshold"
-      }
+      "subject": "Alabama",
+      "reason": "no schedule to simulate"
     },
     {
-      "subject": "Anchor State",
-      "market": "win_total",
-      "side": "over",
-      "line": 1.5,
-      "book": "SyntheticBook",
-      "il_retail_only": false,
-      "projected_wins": 1.65,
-      "p10_p90": [
-        0.0,
-        3.0
-      ],
-      "tier": "speculative",
-      "tier_reason": "1.0 effective threads \u2014 no real corroboration",
-      "effective_threads": 1.0,
-      "independence": {
-        "raw_threads": 0,
-        "effective_threads": 0.0,
-        "discount_pct": 0.0,
-        "thread_names": [],
-        "shared_urls": [],
-        "shared_domains": [],
-        "pair_overlaps": [],
-        "notes": [
-          "No sourced evidence supplied"
-        ]
-      },
-      "edge": {
-        "subject": "Anchor State",
-        "market": "win_total",
-        "side": "over",
-        "line": 1.5,
-        "price_american": -121,
-        "model_prob": 0.5107,
-        "market_prob": 0.5239,
-        "edge": -0.0132,
-        "ev_per_unit": -0.0671,
-        "kelly_full": -0.0812,
-        "stake_fraction": 0.0,
-        "bettable": false,
-        "reason": "edge -1.3% below 3% threshold"
-      }
+      "subject": "LSU",
+      "reason": "no schedule to simulate"
     },
     {
-      "subject": "Nettle State",
-      "market": "win_total",
-      "side": "under",
-      "line": 5.5,
-      "book": "SyntheticBook",
-      "il_retail_only": false,
-      "projected_wins": 5.17,
-      "p10_p90": [
-        3.0,
-        7.0
-      ],
-      "tier": "speculative",
-      "tier_reason": "1.0 effective threads \u2014 no real corroboration",
-      "effective_threads": 1.0,
-      "independence": {
-        "raw_threads": 0,
-        "effective_threads": 0.0,
-        "discount_pct": 0.0,
-        "thread_names": [],
-        "shared_urls": [],
-        "shared_domains": [],
-        "pair_overlaps": [],
-        "notes": [
-          "No sourced evidence supplied"
-        ]
-      },
-      "edge": {
-        "subject": "Nettle State",
-        "market": "win_total",
-        "side": "under",
-        "line": 5.5,
-        "price_american": -171,
-        "model_prob": 0.591,
-        "market_prob": 0.6043,
-        "edge": -0.0133,
-        "ev_per_unit": -0.0634,
-        "kelly_full": -0.1084,
-        "stake_fraction": 0.0,
-        "bettable": false,
-        "reason": "edge -1.3% below 3% threshold"
-      }
+      "subject": "Texas A&M",
+      "reason": "no schedule to simulate"
     },
     {
-      "subject": "Kestrel College",
-      "market": "win_total",
-      "side": "under",
-      "line": 6.5,
-      "book": "SyntheticBook",
-      "il_retail_only": false,
-      "projected_wins": 6.22,
-      "p10_p90": [
-        4.0,
-        8.0
-      ],
-      "tier": "speculative",
-      "tier_reason": "1.0 effective threads \u2014 no real corroboration",
-      "effective_threads": 1.0,
-      "independence": {
-        "raw_threads": 0,
-        "effective_threads": 0.0,
-        "discount_pct": 0.0,
-        "thread_names": [],
-        "shared_urls": [],
-        "shared_domains": [],
-        "pair_overlaps": [],
-        "notes": [
-          "No sourced evidence supplied"
-        ]
-      },
-      "edge": {
-        "subject": "Kestrel College",
-        "market": "win_total",
-        "side": "under",
-        "line": 6.5,
-        "price_american": -165,
-        "model_prob": 0.5722,
-        "market_prob": 0.5961,
-        "edge": -0.0238,
-        "ev_per_unit": -0.0809,
-        "kelly_full": -0.1335,
-        "stake_fraction": 0.0,
-        "bettable": false,
-        "reason": "edge -2.4% below 3% threshold"
-      }
+      "subject": "Ole Miss",
+      "reason": "no schedule to simulate"
     },
     {
-      "subject": "Dune Valley",
-      "market": "win_total",
-      "side": "under",
-      "line": 12.5,
-      "book": "SyntheticBook",
-      "il_retail_only": false,
-      "projected_wins": 12.14,
-      "p10_p90": [
-        10.0,
-        14.0
-      ],
-      "tier": "speculative",
-      "tier_reason": "1.0 effective threads \u2014 no real corroboration",
-      "effective_threads": 1.0,
-      "independence": {
-        "raw_threads": 0,
-        "effective_threads": 0.0,
-        "discount_pct": 0.0,
-        "thread_names": [],
-        "shared_urls": [],
-        "shared_domains": [],
-        "pair_overlaps": [],
-        "notes": [
-          "No sourced evidence supplied"
-        ]
-      },
-      "edge": {
-        "subject": "Dune Valley",
-        "market": "win_total",
-        "side": "under",
-        "line": 12.5,
-        "price_american": -179,
-        "model_prob": 0.5845,
-        "market_prob": 0.6141,
-        "edge": -0.0296,
-        "ev_per_unit": -0.089,
-        "kelly_full": -0.1592,
-        "stake_fraction": 0.0,
-        "bettable": false,
-        "reason": "edge -3.0% below 3% threshold"
-      }
+      "subject": "Oklahoma",
+      "reason": "no schedule to simulate"
     },
     {
-      "subject": "Juniper State",
-      "market": "win_total",
-      "side": "under",
-      "line": 10.5,
-      "book": "SyntheticBook",
-      "il_retail_only": false,
-      "projected_wins": 10.4,
-      "p10_p90": [
-        8.0,
-        12.0
-      ],
-      "tier": "speculative",
-      "tier_reason": "1.0 effective threads \u2014 no real corroboration",
-      "effective_threads": 1.0,
-      "independence": {
-        "raw_threads": 0,
-        "effective_threads": 0.0,
-        "discount_pct": 0.0,
-        "thread_names": [],
-        "shared_urls": [],
-        "shared_domains": [],
-        "pair_overlaps": [],
-        "notes": [
-          "No sourced evidence supplied"
-        ]
-      },
-      "edge": {
-        "subject": "Juniper State",
-        "market": "win_total",
-        "side": "under",
-        "line": 10.5,
-        "price_american": -133,
-        "model_prob": 0.5118,
-        "market_prob": 0.5464,
-        "edge": -0.0346,
-        "ev_per_unit": -0.1035,
-        "kelly_full": -0.1376,
-        "stake_fraction": 0.0,
-        "bettable": false,
-        "reason": "edge -3.5% below 3% threshold"
-      }
+      "subject": "Illinois",
+      "reason": "no schedule to simulate"
     },
     {
-      "subject": "Pinnacle West",
-      "market": "win_total",
-      "side": "under",
-      "line": 4.5,
-      "book": "SyntheticBook",
-      "il_retail_only": false,
-      "projected_wins": 4.27,
-      "p10_p90": [
-        2.0,
-        6.0
-      ],
-      "tier": "speculative",
-      "tier_reason": "1.0 effective threads \u2014 no real corroboration",
-      "effective_threads": 1.0,
-      "independence": {
-        "raw_threads": 0,
-        "effective_threads": 0.0,
-        "discount_pct": 0.0,
-        "thread_names": [],
-        "shared_urls": [],
-        "shared_domains": [],
-        "pair_overlaps": [],
-        "notes": [
-          "No sourced evidence supplied"
-        ]
-      },
-      "edge": {
-        "subject": "Pinnacle West",
-        "market": "win_total",
-        "side": "under",
-        "line": 4.5,
-        "price_american": -176,
-        "model_prob": 0.575,
-        "market_prob": 0.6097,
-        "edge": -0.0347,
-        "ev_per_unit": -0.0983,
-        "kelly_full": -0.173,
-        "stake_fraction": 0.0,
-        "bettable": false,
-        "reason": "edge -3.5% below 3% threshold"
-      }
+      "subject": "Northwestern",
+      "reason": "no schedule to simulate"
     }
   ],
-  "skipped": [],
   "simulation": {
-    "available": true,
-    "n_sims": 4000,
-    "n_games": 120,
-    "margin_sd": 16.5,
-    "warnings": [
-      "Rating uncertainty propagated (max SE 0.17 pts); win distributions are wider and edges smaller than a point-estimate run"
-    ]
+    "available": false,
+    "reason": "No season schedule available from this source. Win-total edges require simulating a full schedule; ratings above are still usable for game lines."
   },
   "notes": [
-    "SYNTHETIC DATA \u2014 generated by model/make_fixture.py, not a real market.",
-    "Exists to validate the engine against known truth. Never a basis for a bet."
-  ],
-  "calibration": {
-    "n_settled": 0,
-    "n_open": 3,
-    "brier": null,
-    "brier_baseline": null,
-    "skill_score": null,
-    "hit_rate": null,
-    "mean_predicted": null,
-    "roi": null,
-    "buckets": [],
-    "by_tier": [],
-    "clv": {},
-    "verdict": "No settled picks yet. Nothing about this model's accuracy is known \u2014 treat every confidence label as an untested assertion.",
-    "warnings": [
-      "Need ~30 settled picks before any signal emerges"
-    ]
-  }
+    "Derived from data/market.json (research-thread output)."
+  ]
 }

@@ -6,3 +6,6 @@
 __pycache__/
 *.pyc
 .venv/
+
+# Re-downloadable source CSVs (model/empirical.py fetches them on demand)
+data/raw/

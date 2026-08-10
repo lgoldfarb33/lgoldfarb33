@@ -18,14 +18,24 @@ import urllib.request
 from dataclasses import dataclass, field, asdict
 from typing import Literal
 
-# CFB margin-of-victory standard deviation. Game outcomes scatter around the
-# expected margin with roughly this SD; it is the single most important constant
-# in the simulator and is deliberately exposed rather than buried.
-MARGIN_SD_DEFAULT = 16.5
+# CFB margin-of-victory standard deviation: how far actual margins scatter around
+# the expected margin. The single most important constant in the simulator.
+#
+# MEASURED, not assumed. Fit on 3,132 FBS-vs-FBS games, 2022-2025, from
+# sportsdataverse/cfbfastR-data. See model/empirical.py.
+#   unweighted            16.94
+#   recency-weighted      17.48   <- used, since recent seasons describe 2026 better
+# Note this is the RESIDUAL SD after adjusting for team strength. Raw margin SD is
+# ~24.9; using that would flatten every win probability toward 50% and erase real
+# edges. The earlier assumed value of 16.5 was close, and is now retired.
+MARGIN_SD_DEFAULT = 17.5
 
-# Home field is worth roughly this much in CFB. Used only as a fallback when
-# there are too few games to fit it from the data.
-HFA_DEFAULT = 2.5
+# Home advantage in points. Also measured on the same 3,132 games:
+#   unweighted             3.91
+#   recency-weighted       4.50   <- used; home advantage has drifted up in recent seasons
+# The previously assumed 2.5 was materially too low, which understated every home
+# favorite and biased the model toward road sides.
+HFA_DEFAULT = 4.5
 
 
 @dataclass
@@ -68,6 +78,7 @@ class MarketSnapshot:
     win_totals: list[WinTotal] = field(default_factory=list)
     source: Literal["odds_api", "fixture"] = "fixture"
     synthetic: bool = False
+    generated_with: dict = field(default_factory=dict)
     notes: list[str] = field(default_factory=list)
 
     def to_dict(self) -> dict:
@@ -192,6 +203,7 @@ class FixtureSource:
             as_of=as_of or raw.get("as_of", ""),
             source="fixture",
             synthetic=bool(raw.get("synthetic", True)),
+            generated_with=dict(raw.get("generated_with", {})),
             notes=list(raw.get("notes", [])),
         )
         snap.games = [Game(**g) for g in raw.get("games", [])]

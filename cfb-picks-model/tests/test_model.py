@@ -25,7 +25,20 @@ FIX = os.path.join(ROOT, "data", "fixtures")
 
 
 def _fixture():
-    if not os.path.exists(os.path.join(FIX, "synthetic_market.json")):
+    """Load the fixture, regenerating it if the engine's constants have moved.
+
+    The fixture prices its win totals with the simulator's margin SD. When that
+    constant changed (16.5 -> a measured 17.5) a stale fixture reported two false
+    positives — the engine was correctly finding the gap between the old curve and
+    the new one. Staleness must fail loudly or not at all.
+    """
+    from model.sources import MARGIN_SD_DEFAULT
+    path = os.path.join(FIX, "synthetic_market.json")
+    stale = True
+    if os.path.exists(path):
+        stamp = json.load(open(path)).get("generated_with", {})
+        stale = stamp.get("margin_sd") != MARGIN_SD_DEFAULT
+    if stale:
         make_fixture.build(FIX)
     snap = FixtureSource(os.path.join(FIX, "synthetic_market.json")).fetch()
     truth = json.load(open(os.path.join(FIX, "synthetic_truth.json")))
