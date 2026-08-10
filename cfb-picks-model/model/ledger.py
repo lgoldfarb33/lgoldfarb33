@@ -98,9 +98,20 @@ class Ledger:
         actual_value: float | None = None,
         closing_line: float | None = None,
         closing_price_american: int | None = None,
+        closing_opposite_price_american: int | None = None,
         settled_at: str = "",
     ) -> LedgerEntry | None:
-        """Append a settled revision of an existing pick."""
+        """Append a settled revision of an existing pick.
+
+        `closing_opposite_price_american` is the closing price on the OTHER side of
+        the same market, and matters more than it looks: `market_prob` at open was
+        stored de-vigged (via `devig_two_way` in edge.py). Comparing that against a
+        raw, vig-included closing price systematically inflates CLV — at standard
+        -110/-110 pricing by about 2.2 percentage points on every single pick, which
+        would look exactly like the "genuine edge" signal calibrate.py is watching
+        for. Pass both closing prices to get a real, apples-to-apples CLV; passing
+        only one leaves `clv_prob` unset rather than reporting a biased number.
+        """
         current = {e.pick_id: e for e in self.all()}.get(pick_id)
         if current is None:
             return None
@@ -111,9 +122,11 @@ class Ledger:
         current.closing_price_american = closing_price_american
         current.settled_at = settled_at
 
-        if closing_price_american is not None and current.market_prob is not None:
-            from .edge import american_to_implied
-            current.clv_prob = american_to_implied(closing_price_american) - current.market_prob
+        if (closing_price_american is not None and closing_opposite_price_american is not None
+                and current.market_prob is not None):
+            from .edge import devig_two_way
+            close_prob, _ = devig_two_way(closing_price_american, closing_opposite_price_american)
+            current.clv_prob = close_prob - current.market_prob
 
         self._append(current)
         return current

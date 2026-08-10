@@ -3,7 +3,7 @@
   "synthetic": true,
   "source": "fixture",
   "generated_with": {
-    "margin_sd": 17.5,
+    "margin_sd": 15.8,
     "true_hfa": 2.6
   },
   "notes": [
@@ -1336,8 +1336,8 @@
     {
       "team": "Anchor State",
       "total": 1.5,
-      "over_price": -154,
-      "under_price": 128,
+      "over_price": -100,
+      "under_price": -119,
       "book": "SyntheticBook",
       "source_url": "fixture://synthetic",
       "il_retail_only": false
@@ -1345,26 +1345,26 @@
     {
       "team": "Basalt Tech",
       "total": 3.5,
-      "over_price": 120,
-      "under_price": -144,
+      "over_price": 160,
+      "under_price": -194,
       "book": "SyntheticBook",
       "source_url": "fixture://synthetic",
       "il_retail_only": false
     },
     {
       "team": "Cedar A&M",
-      "total": 10.5,
-      "over_price": -176,
-      "under_price": 146,
+      "total": 11.5,
+      "over_price": 122,
+      "under_price": -146,
       "book": "SyntheticBook",
       "source_url": "fixture://synthetic",
       "il_retail_only": false
     },
     {
       "team": "Dune Valley",
-      "total": 11.5,
-      "over_price": -183,
-      "under_price": 151,
+      "total": 12.5,
+      "over_price": 127,
+      "under_price": -153,
       "book": "SyntheticBook",
       "source_url": "fixture://synthetic",
       "il_retail_only": false
@@ -1372,8 +1372,8 @@
     {
       "team": "Ember City",
       "total": 10.5,
-      "over_price": -109,
-      "under_price": -110,
+      "over_price": -124,
+      "under_price": 103,
       "book": "SyntheticBook",
       "source_url": "fixture://synthetic",
       "il_retail_only": false
@@ -1381,8 +1381,8 @@
     {
       "team": "Foxglove U",
       "total": 10.5,
-      "over_price": -127,
-      "under_price": 106,
+      "over_price": -152,
+      "under_price": 127,
       "book": "SyntheticBook",
       "source_url": "fixture://synthetic",
       "il_retail_only": false
@@ -1390,7 +1390,7 @@
     {
       "team": "Granite Bay",
       "total": 8.5,
-      "over_price": 127,
+      "over_price": 126,
       "under_price": -152,
       "book": "SyntheticBook",
       "source_url": "fixture://synthetic",
@@ -1399,8 +1399,8 @@
     {
       "team": "Harbor Point",
       "total": 5.5,
-      "over_price": 106,
-      "under_price": -127,
+      "over_price": 125,
+      "under_price": -150,
       "book": "SyntheticBook",
       "source_url": "fixture://synthetic",
       "il_retail_only": false
@@ -1408,8 +1408,8 @@
     {
       "team": "Ironwood",
       "total": 7.5,
-      "over_price": -114,
-      "under_price": -105,
+      "over_price": -105,
+      "under_price": -114,
       "book": "SyntheticBook",
       "source_url": "fixture://synthetic",
       "il_retail_only": false
@@ -1417,8 +1417,8 @@
     {
       "team": "Juniper State",
       "total": 10.5,
-      "over_price": 122,
-      "under_price": -146,
+      "over_price": 100,
+      "under_price": -120,
       "book": "SyntheticBook",
       "source_url": "fixture://synthetic",
       "il_retail_only": false
@@ -1426,8 +1426,8 @@
     {
       "team": "Kestrel College",
       "total": 6.5,
-      "over_price": 130,
-      "under_price": -156,
+      "over_price": 134,
+      "under_price": -162,
       "book": "SyntheticBook",
       "source_url": "fixture://synthetic",
       "il_retail_only": false
@@ -1435,8 +1435,8 @@
     {
       "team": "Lantern Hill",
       "total": 7.5,
-      "over_price": -128,
-      "under_price": 106,
+      "over_price": -145,
+      "under_price": 121,
       "book": "SyntheticBook",
       "source_url": "fixture://synthetic",
       "il_retail_only": false
@@ -1444,8 +1444,8 @@
     {
       "team": "Marrow University",
       "total": 11.5,
-      "over_price": -166,
-      "under_price": 137,
+      "over_price": -188,
+      "under_price": 155,
       "book": "SyntheticBook",
       "source_url": "fixture://synthetic",
       "il_retail_only": false
@@ -1453,8 +1453,8 @@
     {
       "team": "Nettle State",
       "total": 5.5,
-      "over_price": 129,
-      "under_price": -155,
+      "over_price": 156,
+      "under_price": -190,
       "book": "SyntheticBook",
       "source_url": "fixture://synthetic",
       "il_retail_only": false
@@ -1462,8 +1462,8 @@
     {
       "team": "Obsidian A&M",
       "total": 4.5,
-      "over_price": -119,
-      "under_price": -101,
+      "over_price": 104,
+      "under_price": -124,
       "book": "SyntheticBook",
       "source_url": "fixture://synthetic",
       "il_retail_only": false
@@ -1471,8 +1471,8 @@
     {
       "team": "Pinnacle West",
       "total": 4.5,
-      "over_price": 126,
-      "under_price": -152,
+      "over_price": 151,
+      "under_price": -183,
       "book": "SyntheticBook",
       "source_url": "fixture://synthetic",
       "il_retail_only": false

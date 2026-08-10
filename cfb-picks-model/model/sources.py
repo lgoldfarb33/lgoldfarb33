@@ -21,21 +21,34 @@ from typing import Literal
 # CFB margin-of-victory standard deviation: how far actual margins scatter around
 # the expected margin. The single most important constant in the simulator.
 #
-# MEASURED, not assumed. Fit on 3,132 FBS-vs-FBS games, 2022-2025, from
-# sportsdataverse/cfbfastR-data. See model/empirical.py.
-#   unweighted            16.94
-#   recency-weighted      17.48   <- used, since recent seasons describe 2026 better
-# Note this is the RESIDUAL SD after adjusting for team strength. Raw margin SD is
-# ~24.9; using that would flatten every win probability toward 50% and erase real
-# edges. The earlier assumed value of 16.5 was close, and is now retired.
-MARGIN_SD_DEFAULT = 17.5
+# MEASURED, not assumed — and re-measured once already. Fit on 3,132 FBS-vs-FBS
+# games, 2022-2025, from sportsdataverse/cfbfastR-data. See model/empirical.py.
+#
+# The first measurement used ridge=25 for the underlying fit and reported 17.48.
+# A Fable-run review (2026-08-10) and independent verification found that ridge
+# value was an unvalidated guess that shrank the rating scale to ~40% of its
+# cross-validation-optimal spread, and that shrinkage leaks directly into this
+# number: less-confident (shrunk) ratings explain less of each game's margin, so
+# more of it lands in the "unexplained" residual. 5-fold CV selected ridge=1.0
+# (RESULTS_RIDGE in empirical.py); refitting at that ridge:
+#   unweighted (ridge=1.0)         16.00
+#   recency-weighted (ridge=1.0)   15.82   <- used
+# Raw (team-strength-inclusive) margin SD is ~24.9; using that instead would
+# flatten every win probability toward 50% and erase real edges. The original
+# assumed value of 16.5 was, by coincidence, closer to this corrected number than
+# the first "measured" one was.
+MARGIN_SD_DEFAULT = 15.8
 
-# Home advantage in points. Also measured on the same 3,132 games:
-#   unweighted             3.91
-#   recency-weighted       4.50   <- used; home advantage has drifted up in recent seasons
-# The previously assumed 2.5 was materially too low, which understated every home
-# favorite and biased the model toward road sides.
-HFA_DEFAULT = 4.5
+# Home advantage in points. Same games, same ridge correction:
+#   unweighted (ridge=1.0)          2.83
+#   recency-weighted (ridge=1.0)    3.21   <- used
+# Per-season (ridge=1.0): 2022=2.26, 2023=2.80, 2024=3.46, 2025=3.57 — home
+# advantage has drifted up in recent seasons, which is why the recency-weighted
+# figure is used rather than the flat multi-season average.
+# The ridge=25 fit reported 4.50 (unexplained team strength gets absorbed into HFA
+# the same way it inflates the residual above). The originally assumed 2.5 was
+# too low in the other direction — real HFA looks to be materially above that.
+HFA_DEFAULT = 3.2
 
 
 @dataclass

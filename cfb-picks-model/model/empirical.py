@@ -47,9 +47,36 @@ FBS_CONFERENCES = {
 MEASURED_HFA = 3.91
 MEASURED_MARGIN_SD = 16.94
 
-# Ridge for the results fit. Heavier than the spread fit because a 12-game season
-# is a small sample per team and unregularized margins overfit blowouts.
-RESULTS_RIDGE = 25.0
+# Ridge for the results fit, chosen by 5-fold cross-validation on held-out games
+# (minimize squared error predicting margin), not assumed.
+#
+#   ridge   cv_rmse
+#     1.0    16.809   <- selected
+#     1.5    16.812
+#     2.0    16.827
+#     5.0    17.012
+#    25.0    18.096   <- previous value, 8% worse out-of-sample
+#
+# The earlier RESULTS_RIDGE=25.0 was an unvalidated guess "heavier than the spread
+# fit because a season is a small sample" — reasonable-sounding, wrong. It shrank
+# the rating scale to ~40% of its CV-optimal spread (rating SD 4.3 vs 11.3 at
+# ridge=1), which (a) made the market/prior divergence signal mostly an artifact of
+# shrinkage rather than real disagreement, (b) flattened blended ratings and biased
+# every projection toward the market side, and (c) fed directly into
+# MARGIN_SD_DEFAULT/HFA_DEFAULT in sources.py, which were "measured" off this same
+# over-shrunk fit. Both have been re-measured at the corrected ridge; see sources.py.
+RESULTS_RIDGE = 1.0
+
+# When a schedule references a team never seen in this many seasons of FBS results
+# (usually FCS/D2/new-program opponents — load_results excludes non-FBS entirely),
+# there is no fitted rating to fall back on. Rather than drop those games (which
+# silently understates every FBS team's win total by ~1 whenever their schedule
+# includes a cupcake with no market line — see the module docstring on blend()),
+# assign a documented placeholder. -28 is a coarse read of typical FBS-favored-over-
+# FCS spreads (20s to high-30s), NOT a fitted number. Replace once FCS results or
+# per-game market lines are available; until then this is flagged in the run
+# output wherever it is used, never applied silently.
+FCS_FALLBACK_RATING = -28.0
 
 # How much a season's results count toward the prior. Rosters turn over hard in the
 # portal era, so last season dominates and older seasons decay fast.
@@ -227,7 +254,7 @@ def blend(
 ) -> tuple[dict[str, float], dict[str, float]]:
     """Combine market-implied and results-based ratings.
 
-    Returns (blended, divergence) where divergence = market - prior.
+    Returns (blended, divergence) where divergence = market - prior, recentered.
 
     The market gets most of the weight because it is sharper and current; the prior
     supplies an independent check. **Divergence is the interesting output.** A large
@@ -235,7 +262,31 @@ def blend(
     field — offseason optimism about a new coach, a portal haul, a returning QB. That
     is exactly the kind of belief that is sometimes right and sometimes a bubble, and
     it is where the qualitative threads have something to say that the numbers cannot.
+
+    Two things this version fixes that the first cut got wrong:
+
+    1. **Coverage.** A team present only in the prior — the common case for any
+       schedule opponent the current market snapshot has no line on — used to be
+       dropped from `blended` entirely, which forced the simulator to skip every
+       game that team played in and silently understated everyone's win total. It
+       now carries its prior rating straight through, so it is at least usable as an
+       opponent (though `is_identified()` still correctly refuses to make it the
+       *subject* of a pick, since zero market games means zero market confirmation).
+    2. **Recentering.** `market` is anchored sum-to-zero over whatever teams are in
+       the snapshot; `prior` is anchored sum-to-zero over the full ~136-team FBS
+       population. A snapshot skewed toward ranked teams (as an early-season one
+       usually is) then carries a systematic positive offset with no game-level
+       meaning — every team looks overrated by the same constant. Divergence is
+       computed after recentering both sets on the teams they share, so the number
+       reflects an actual belief gap, not a sampling artifact.
     """
+    shared = sorted(set(market) & set(prior))
+    if shared:
+        market_shift = sum(market[t] for t in shared) / len(shared)
+        prior_shift = sum(prior[t] for t in shared) / len(shared)
+    else:
+        market_shift = prior_shift = 0.0
+
     blended, divergence = {}, {}
     for t, m in market.items():
         p = prior.get(t)
@@ -243,7 +294,10 @@ def blend(
             blended[t] = m
             continue
         blended[t] = market_weight * m + (1.0 - market_weight) * p
-        divergence[t] = m - p
+        divergence[t] = (m - market_shift) - (p - prior_shift)
+    for t, p in prior.items():
+        if t not in market:
+            blended[t] = p
     return blended, divergence
 
 

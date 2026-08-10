@@ -121,21 +121,43 @@ def build(out_dir: str, n_games_per_team: int = 11) -> dict:
     # that belief — a fully self-consistent, professionally-priced market. Its only
     # flaw is that the belief is wrong for three teams.
     #
-    # Probabilities MUST use the same win-probability function the simulator uses
-    # (normal CDF at MARGIN_SD_DEFAULT). An earlier version used a logistic
-    # approximation, and the mismatch between the two curves alone manufactured
-    # apparent edges on 11 of 16 teams. That is a live risk in production: if the
-    # true margin SD differs from the assumed 16.5, every edge here is biased.
-    from .sources import MARGIN_SD_DEFAULT  # noqa: F401  (documents the shared constant)
+    # Pricing MUST go through the exact same pipeline run() uses to evaluate picks
+    # — solve_ratings() then simulate_season() with rating_se propagation — not a
+    # simplified stand-in. Two earlier versions of this file learned that lesson
+    # the hard way:
+    #   1. A logistic approximation instead of the simulator's normal CDF
+    #      manufactured apparent edges on 11 of 16 teams.
+    #   2. Pricing off the exact true book_ratings with a deterministic CDF sum,
+    #      while the live model prices off *fitted* ratings plus their standard
+    #      errors (simulate_season(..., rating_se=...)), left a structural gap
+    #      between "fair" and what the model actually computes for a fair team —
+    #      deterministic, reproducible false positives on 3 of the 13 non-mispriced
+    #      teams, every run, at the same 3 teams. Zero information gained from
+    #      more simulations; the two computations were just answering slightly
+    #      different questions.
+    # Routing both through solve_ratings + simulate_season closes that gap: a team
+    # with no book_error now prices to (approximately) zero edge under the model's
+    # own methodology, not under an idealized stand-in for it.
+    from .ratings import solve_ratings
+    from .simulate import simulate_season, ScheduledGame
+    from .sources import Game
+
+    game_objs = [Game(home=g["home"], away=g["away"], home_margin=g["home_margin"],
+                      neutral=g["neutral"]) for g in games]
+    sched_objs = [ScheduledGame(home=g["home"], away=g["away"], neutral=g["neutral"],
+                                week=g["week"]) for g in schedule]
+    fit = solve_ratings(game_objs)
+    price_sim = simulate_season(fit.ratings, sched_objs, fit.hfa, n_sims=60000,
+                                rating_se=fit.std_errors, seed=13)
 
     win_totals = []
     for t in TEAMS:
-        exp_wins = _expected_wins(t, schedule, book_ratings)
+        proj = price_sim.projections[t]
         # Snap to the nearest half-integer so no total can push. Naively rounding
         # then bumping integers up by 0.5 biases every total upward and hands the
-        # UNDER a free edge on every team — it did exactly that here.
-        posted = round(exp_wins - 0.5) + 0.5
-        p_over = _prob_over(t, posted, schedule, book_ratings)
+        # UNDER a free edge on every team — an earlier version did exactly that.
+        posted = round(proj.mean_wins - 0.5) + 0.5
+        p_over = proj.prob_over(posted)
         over_price, under_price = _fair_prices(p_over)
         win_totals.append({
             "team": t, "total": posted,

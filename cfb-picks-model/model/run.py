@@ -209,11 +209,33 @@ def run(source: str = "fixture", n_sims: int = 20000, bankroll: float = 0.0,
         _write(result)
         return result
 
+    # Any schedule opponent still missing a rating at this point (in neither the
+    # market snapshot nor the results-based prior — typically an FCS opponent,
+    # which build_prior's FBS-only filter excludes by construction) would
+    # otherwise cause every game that opponent plays in to be silently dropped
+    # from the simulation, understating the OTHER team's win total by ~1 whenever
+    # their schedule includes a cupcake. Fill with a documented placeholder
+    # instead, and report exactly who got it and how many games it touched — this
+    # must never be a silent assumption.
+    schedule_teams = {t for g in schedule for t in (g.home, g.away)}
+    filled = sorted(schedule_teams - set(adjusted))
+    if filled:
+        from .empirical import FCS_FALLBACK_RATING
+        for t in filled:
+            adjusted[t] = FCS_FALLBACK_RATING
+        result["notes"].append(
+            f"{len(filled)} schedule opponent(s) had no market or prior rating and were "
+            f"assigned the documented FCS_FALLBACK_RATING ({FCS_FALLBACK_RATING}) so their "
+            f"games are simulated rather than dropped: {', '.join(filled[:10])}"
+            + (" ..." if len(filled) > 10 else "")
+        )
+
     sim = simulate_season(adjusted, schedule, sol.hfa, n_sims=n_sims,
                           rating_se=sol.std_errors)
     result["simulation"] = {
         "available": True, "n_sims": sim.n_sims, "n_games": sim.n_games,
         "margin_sd": sim.margin_sd, "warnings": sim.warnings,
+        "fallback_rated_opponents": filled,
     }
 
     ledger = Ledger(DATA)
@@ -229,13 +251,23 @@ def run(source: str = "fixture", n_sims: int = 20000, bankroll: float = 0.0,
                           f"(< {MIN_GAMES_FOR_CONFIDENCE}) — rating not identified"})
             continue
 
+        # Evaluate BOTH sides and pick by edge, not by which the model thinks is
+        # more likely. Those are not the same choice: if the model gives 45% to
+        # the over against a de-vigged market of 35%, that is a real +10pt edge
+        # on the over — but "pick whichever probability is higher" would compare
+        # the OTHER side instead (55% model vs 65% market, a negative edge) and
+        # reject a bet that should have been taken. This was silently backwards
+        # on every non-trivial pick before the fix.
         p_over, p_under = proj.prob_over(wt.total), proj.prob_under(wt.total)
-        side = "over" if p_over > p_under else "under"
-        p_model = max(p_over, p_under)
+        er_over = evaluate(wt.team, "win_total", "over", wt.total, p_over,
+                           wt.over_price, wt.under_price)
+        er_under = evaluate(wt.team, "win_total", "under", wt.total, p_under,
+                            wt.under_price, wt.over_price)
+        candidates = [c for c in (er_over, er_under) if c.edge is not None]
+        er = max(candidates, key=lambda c: c.edge) if candidates else er_over
+        side, p_model = er.side, er.model_prob
         price = wt.over_price if side == "over" else wt.under_price
         opp = wt.under_price if side == "over" else wt.over_price
-
-        er = evaluate(wt.team, "win_total", side, wt.total, p_model, price, opp)
 
         ev_map = _evidence_for(wt.team, personnel, sentiment)
         ind = assess(ev_map) if ev_map else assess({})
@@ -250,6 +282,8 @@ def run(source: str = "fixture", n_sims: int = 20000, bankroll: float = 0.0,
             "book": wt.book, "il_retail_only": wt.il_retail_only,
             "projected_wins": round(proj.mean_wins, 2),
             "p10_p90": [proj.p10, proj.p90],
+            "games_simulated": proj.games,
+            "unidentified_opponents": proj.unidentified_opponents,
             "tier": tier, "tier_reason": tier_reason,
             "effective_threads": round(eff, 2),
             "independence": ind.as_dict(),
