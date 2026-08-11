@@ -8,7 +8,7 @@
 > truth. The teams are invented. **Nothing here is a bet.** These picks are
 > excluded from the calibration ledger.
 
-Generated `2026-08-10T16:50:53+00:00` · source `fixture` · as of `2026-08-10`
+Generated `2026-08-11T07:08:04+00:00` · source `fixture` · as of `2026-08-10`
 
 ## Ratings
 

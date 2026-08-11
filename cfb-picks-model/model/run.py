@@ -19,7 +19,7 @@ import os
 from datetime import datetime, timezone
 
 from .calibrate import build_report
-from .empirical import blend, build_prior
+from .empirical import blend, build_prior, MARKET_WEIGHT_DEFAULT
 from .edge import evaluate
 from .independence import assess, confidence_tier
 from .ledger import Ledger, LedgerEntry, make_pick_id
@@ -153,13 +153,14 @@ def run(source: str = "fixture", n_sims: int = 20000, bankroll: float = 0.0,
     if use_prior and not snap.synthetic:
         fit = build_prior(DATA)
         if fit is not None:
-            blended, divergence = blend(sol.ratings, fit.ratings, market_weight=0.75)
+            blended, divergence = blend(sol.ratings, fit.ratings,
+                                        market_weight=MARKET_WEIGHT_DEFAULT)
             sol.ratings = blended
             prior_info = {
                 "seasons": fit.seasons, "n_games": fit.n_games, "n_teams": fit.n_teams,
                 "measured_hfa": round(fit.hfa, 2),
                 "measured_residual_sd": round(fit.residual_sd, 2),
-                "market_weight": 0.75,
+                "market_weight": MARKET_WEIGHT_DEFAULT,
                 "note": ("Ratings fit from realized scoring margins, independent of any "
                          "betting market. Divergence = market rating minus this prior."),
             }

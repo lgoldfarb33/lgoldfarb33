@@ -1,0 +1,63 @@
+{
+  "generated": "2026-08-10",
+  "method": "walk-forward, no lookahead: empirical prior fit once on 2022-2024 only; for each regular-season week W of the test season, market ratings solved from every game strictly before W using that week's own closing spread, blended with the static prior, then used to predict week W",
+  "data_source": "sportsdataverse/cfbfastR-data via raw.githubusercontent.com (schedules + betting/csv/cfb_line_odds.csv.gz)",
+  "caveat": "Betting CSV carries lines but no prices for any of its 4 books (DraftKings, ESPN Bet, Bovada). All ATS figures assume standard -110/-110, the overwhelmingly common real price for a spread bet, not a measured one.",
+  "seasons_tested": [2024, 2025],
+  "weight_sweep": {
+    "2025": [
+      {"market_weight": 0.0,  "mae_blended": 14.3744, "ats_cover_rate": 0.4814, "ats_bets": 469},
+      {"market_weight": 0.25, "mae_blended": 13.6859, "ats_cover_rate": 0.4916, "ats_bets": 431},
+      {"market_weight": 0.5,  "mae_blended": 13.2124, "ats_cover_rate": 0.4824, "ats_bets": 411},
+      {"market_weight": 0.6,  "mae_blended": 13.0640, "ats_cover_rate": 0.4922, "ats_bets": 394},
+      {"market_weight": 0.75, "mae_blended": 12.9034, "ats_cover_rate": 0.5067, "ats_bets": 382},
+      {"market_weight": 0.9,  "mae_blended": 12.8154, "ats_cover_rate": 0.5055, "ats_bets": 371},
+      {"market_weight": 1.0,  "mae_blended": 12.7948, "ats_cover_rate": 0.5086, "ats_bets": 359}
+    ],
+    "2024": [
+      {"market_weight": 0.0,  "mae_blended": 14.944, "ats_cover_rate": 0.4738, "ats_bets": 469},
+      {"market_weight": 0.25, "mae_blended": 14.201, "ats_cover_rate": 0.4821, "ats_bets": 456},
+      {"market_weight": 0.5,  "mae_blended": 13.652, "ats_cover_rate": 0.4859, "ats_bets": 436},
+      {"market_weight": 0.6,  "mae_blended": 13.477, "ats_cover_rate": 0.4838, "ats_bets": 412},
+      {"market_weight": 0.75, "mae_blended": 13.256, "ats_cover_rate": 0.4934, "ats_bets": 389},
+      {"market_weight": 0.9,  "mae_blended": 13.118, "ats_cover_rate": 0.4848, "ats_bets": 372},
+      {"market_weight": 1.0,  "mae_blended": 13.049, "ats_cover_rate": 0.4972, "ats_bets": 363}
+    ]
+  },
+  "conviction_threshold_sweep_2025": {
+    "breakeven_rate": 0.5238,
+    "note": "95% CI computed at each threshold/weight combination; ALL comfortably span breakeven. No threshold from 3 to 14 points isolates a real signal.",
+    "results": [
+      {"threshold_pts": 3,  "weight": 0.75, "n_bets": 373, "cover_rate": 0.5067, "ci": [0.456, 0.557]},
+      {"threshold_pts": 3,  "weight": 1.0,  "n_bets": 350, "cover_rate": 0.5086, "ci": [0.456, 0.561]},
+      {"threshold_pts": 5,  "weight": 0.75, "n_bets": 235, "cover_rate": 0.4979, "ci": [0.434, 0.562]},
+      {"threshold_pts": 5,  "weight": 1.0,  "n_bets": 222, "cover_rate": 0.5045, "ci": [0.439, 0.570]},
+      {"threshold_pts": 7,  "weight": 0.75, "n_bets": 138, "cover_rate": 0.5000, "ci": [0.417, 0.583]},
+      {"threshold_pts": 7,  "weight": 1.0,  "n_bets": 109, "cover_rate": 0.5413, "ci": [0.448, 0.635]},
+      {"threshold_pts": 10, "weight": 0.75, "n_bets": 57,  "cover_rate": 0.4912, "ci": [0.361, 0.621]},
+      {"threshold_pts": 10, "weight": 1.0,  "n_bets": 38,  "cover_rate": 0.4474, "ci": [0.289, 0.605]},
+      {"threshold_pts": 14, "weight": 0.75, "n_bets": 15,  "cover_rate": 0.4667, "ci": [0.214, 0.719]},
+      {"threshold_pts": 14, "weight": 1.0,  "n_bets": 14,  "cover_rate": 0.5714, "ci": [0.312, 0.831]}
+    ]
+  },
+  "line_movement_signal_2025": {
+    "question": "Does the DIRECTION the closing line moved from open predict which side covers -- 'follow the steam' vs 'fade the public overreaction'?",
+    "n_games": 664,
+    "with_move_cover_rate": 0.4819,
+    "with_move_95ci": [0.444, 0.520],
+    "against_move_cover_rate": 0.5181,
+    "breakeven": 0.5238,
+    "finding": "Fading the closing move (51.8%) sits closer to breakeven (52.4%) than following it (48.2%), consistent with the well-documented 'public overreaction' pattern in betting literature -- but the mirrored confidence interval for fading still spans breakeven, so this is not a statistically distinguishable edge. Directionally interesting, not actionable."
+  },
+  "findings": [
+    "MAE decreases monotonically as market_weight increases toward 1.0, replicated in both 2024 and 2025 independently. The static 2022-2024 results prior measurably worsens margin prediction the more weight it is given.",
+    "No market_weight and no conviction threshold produced an ATS cover rate whose 95% CI excludes the 52.38% breakeven rate. There is no backtested edge in 'market ratings blended with old results' at any configuration tested.",
+    "This does not indict the project's core thesis. It confirms it: a lagged, purely historical power rating competing against a market that reprices weekly on live information (injuries, coaching, personnel) has no reason to win, and didn't. Real edge, if it exists, has to come from the qualitative research threads (personnel/sentiment) supplying CURRENT information the market hasn't priced -- which this backtest structurally cannot evaluate, since no dated thread output exists for 2024-2025.",
+    "MARKET_WEIGHT_DEFAULT moved from an undefended 0.75 to 0.90 -- correcting the clear direction of the finding without fully extrapolating to the 1.0 boundary from two seasons of data."
+  ],
+  "not_tested_by_this_backtest": [
+    "The personnel/sentiment/historical qualitative threads and their point-of-spread adjustments -- no historically-dated thread output exists to backtest against.",
+    "The independence-discounting logic (independence.py) -- same reason.",
+    "Whether real-time research (as opposed to a static prior) would find genuine edge -- only prospective, dated ledger tracking via calibrate.py can answer that."
+  ]
+}

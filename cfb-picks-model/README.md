@@ -85,6 +85,45 @@ mismatch that manufactured edges on 11 of 16 teams; ridge over-shrinking the rat
 scale 16%; a fixture rounding bias that handed the UNDER free edge everywhere; and a
 fitted HFA of 18.7 points on sparse real data, now guarded to a plausible band.
 
+A second review pass (2026-08-10) found five more real bugs by the same discipline —
+each independently reproduced before being fixed, not taken on faith: `RESULTS_RIDGE`
+in `empirical.py` was an unvalidated guess (25.0) that shrank the results-prior's
+rating scale ~60% below its cross-validation-optimal spread, which directly
+contaminated the "measured" HFA/margin-SD constants reported in an earlier session;
+bet side was chosen by raw probability instead of edge, silently rejecting real bets;
+CLV compared a de-vigged open price against a raw closing price, inflating it by
+~2.2pp per pick; unrated schedule opponents (typically FCS) were silently dropped from
+the simulation instead of using a documented fallback; and the market/prior divergence
+signal wasn't recentered on shared teams, baking in a fake offset. See `model/*.py`
+docstrings for the full writeup and CV numbers behind each fix; `tests/test_model.py`
+pins all five as regressions.
+
+### Backtest against real 2024 and 2025 seasons
+
+`model/backtest.py` walks forward through each season week-by-week — no lookahead —
+using real closing spreads and final scores from the same reachable dataset
+(`raw.githubusercontent.com`, no API key). Full writeup in
+[`output/backtest_2025.json`](output/backtest_2025.json). Two findings, replicated
+independently across both seasons:
+
+1. **The static, 2022-2024-only results prior measurably worsens margin prediction
+   the more weight it's given.** MAE decreases monotonically from weight=0.0 to
+   weight=1.0 in both 2024 and 2025. This moved `MARKET_WEIGHT_DEFAULT` from an
+   undefended 0.75 to a backtested **0.90**.
+2. **No blend weight, and no bet-conviction threshold from 3 to 14 points, produced
+   an ATS cover rate whose 95% confidence interval excluded the 52.4% breakeven
+   rate.** There is no backtested edge in "market ratings plus old results" alone,
+   at any configuration tested.
+
+Neither finding undermines the project — it confirms the premise it was built on. A
+lagged historical power rating competing against a market that reprices weekly on
+live information has no reason to win, and didn't. **Real edge, if it exists, has to
+come from the qualitative threads (personnel/sentiment) supplying current information
+the market hasn't priced yet** — which this backtest structurally cannot evaluate,
+since no dated thread output exists for past seasons. The only way to test *that*
+layer is prospectively, through the ledger and `calibrate.py`, on picks made and
+dated in real time going forward.
+
 ## Current blocker
 
 **This session's egress policy blocks every live data host.** `api.the-odds-api.com`,

@@ -67,6 +67,41 @@ MEASURED_MARGIN_SD = 16.94
 # over-shrunk fit. Both have been re-measured at the corrected ridge; see sources.py.
 RESULTS_RIDGE = 1.0
 
+# Weight given to the market side of blend(). Was a fixed, undefended 0.75. A
+# walk-forward backtest against real 2024 and 2025 closing lines and results
+# (model/backtest.py) replaced the guess with a measurement:
+#
+#           MAE (lower=better)         ATS cover rate (breakeven 0.524)
+#   weight   2024    2025               2024     2025
+#     0.0   14.94   14.37               0.474    0.481
+#    0.25   14.20   13.69               0.482    0.492
+#    0.50   13.65   13.21               0.486    0.482
+#    0.75   13.26   12.90   <- was here 0.493    0.507
+#    0.90   13.12   12.82               0.485    0.506
+#    1.00   13.05   12.79               0.497    0.509
+#
+# Two findings, both real (monotonic across two independent seasons, not a
+# single-season fluke):
+#   1. The static 2022-2024 results prior measurably WORSENS margin prediction
+#      the more weight it is given. It is genuinely stale information — no
+#      current-season injuries, coaching changes, or personnel — competing
+#      against a market that prices all of that in weekly.
+#   2. NO weight, and no bet-conviction threshold from 3 to 14 points, produced
+#      an ATS cover rate whose 95% confidence interval excluded the breakeven
+#      rate. There is no backtested edge in "market ratings + old results",
+#      full stop — at any blend weight.
+# Neither finding says this architecture is worthless. It says the same thing
+# the rest of this project is built around: real edge has to come from CURRENT
+# information the market hasn't priced yet (the personnel/sentiment threads),
+# not from a stale power rating. What the backtest legitimately earns is this
+# weight — moved from the old 0.75 toward, but not fully to, the MAE-optimal
+# 1.0. Full extrapolation to the boundary from two seasons of backtesting would
+# overfit; 0.90 corrects the clear direction of the finding while keeping the
+# prior's stabilizing effect on sparse early-season fits, and while keeping
+# `divergence` (which does not depend on this weight) doing real work as an
+# independent flag even as its contribution to the point estimate shrinks.
+MARKET_WEIGHT_DEFAULT = 0.90
+
 # When a schedule references a team never seen in this many seasons of FBS results
 # (usually FCS/D2/new-program opponents — load_results excludes non-FBS entirely),
 # there is no fitted rating to fall back on. Rather than drop those games (which
@@ -250,7 +285,7 @@ def fit_from_results(
 def blend(
     market: dict[str, float],
     prior: dict[str, float],
-    market_weight: float = 0.75,
+    market_weight: float = MARKET_WEIGHT_DEFAULT,
 ) -> tuple[dict[str, float], dict[str, float]]:
     """Combine market-implied and results-based ratings.
 

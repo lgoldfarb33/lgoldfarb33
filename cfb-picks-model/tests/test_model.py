@@ -1,6 +1,8 @@
 """Test suite. Run: python3 -m pytest tests/ -q   (or python3 tests/test_model.py)"""
 from __future__ import annotations
 
+import csv
+import gzip
 import json
 import os
 import sys
@@ -16,7 +18,8 @@ from model.edge import (american_to_decimal, american_to_implied, devig_two_way,
                         evaluate, kelly_fraction)
 from model.independence import assess, confidence_tier
 from model.ledger import Ledger, LedgerEntry, make_pick_id
-from model.empirical import blend, RESULTS_RIDGE, FCS_FALLBACK_RATING
+from model.backtest import line_movement_signal, load_market_lines, MarketGame
+from model.empirical import blend, RESULTS_RIDGE, FCS_FALLBACK_RATING, MARKET_WEIGHT_DEFAULT
 from model.ratings import solve_ratings, suggest_ridge, build_adjustments, apply_adjustments
 from model.simulate import ScheduledGame, simulate_season, win_probability
 from model.sources import FixtureSource, Game
@@ -355,6 +358,85 @@ def test_fallback_rating_fills_unrated_schedule_opponents():
     sim = simulate_season(filled, schedule, hfa=3.2, n_sims=4000)
     assert sim.projections["RealTeam"].unidentified_opponents == 0
     assert sim.projections["RealTeam"].mean_wins > 0.9, "heavy favorite over an FCS-level fallback"
+
+
+# --------------------------------------------------------------- backtest
+
+def test_market_weight_moved_toward_data():
+    """Regression: the blend weight was a fixed 0.75 guess. A walk-forward
+    backtest against real 2024 and 2025 closing lines showed MAE improving
+    monotonically all the way to weight=1.0 in both seasons -- guard against
+    silently drifting back toward the old, unvalidated, lower value."""
+    assert MARKET_WEIGHT_DEFAULT >= 0.85, (
+        f"MARKET_WEIGHT_DEFAULT={MARKET_WEIGHT_DEFAULT} — if intentionally lowered, "
+        f"re-run model/backtest.py's sweep and update the comment with new numbers, "
+        f"don't just change the constant")
+
+
+def test_load_market_lines_parses_and_aggregates():
+    """Schema-level test of the betting-CSV join, using a tiny synthetic CSV so it
+    never depends on the real download. Exercises: multi-book median aggregation,
+    the away-side sign flip to home-margin convention, FBS-only filtering via the
+    schedule join, and skipping incomplete games."""
+    with tempfile.TemporaryDirectory() as d:
+        sched_path = os.path.join(d, "sched_2099.csv")
+        with open(sched_path, "w", newline="") as fh:
+            w = csv.writer(fh)
+            w.writerow(["game_id", "season", "week", "season_type", "completed",
+                       "home_team", "away_team", "home_conference", "away_conference",
+                       "home_points", "away_points"])
+            w.writerow(["1", "2099", "1", "regular", "TRUE", "Home U", "Away State",
+                       "SEC", "Big Ten", "31", "24"])
+            w.writerow(["2", "2099", "1", "regular", "FALSE", "Home U", "Not Yet Played",
+                       "SEC", "Big Ten", "", ""])
+            w.writerow(["3", "2099", "1", "regular", "TRUE", "Home U", "FCS School",
+                       "SEC", "Independent DII", "40", "3"])
+
+        betting_path = os.path.join(d, "betting.csv.gz")
+        with gzip.open(betting_path, "wt", newline="") as fh:
+            w = csv.writer(fh)
+            w.writerow(["id", "game_id", "season", "game_desc", "date_time", "market_type",
+                       "abbr", "lines", "odds", "opening_lines", "opening_odds", "book",
+                       "season_type", "week", "home_team_id", "away_team_id"])
+            # Two books quote the home side directly: -6.5 and -7.5 -> median -7.0
+            w.writerow(["1", "1", "2099.0", "d", "t", "spread", "Home U", "-6.5", "",
+                       "", "", "BookA", "regular", "1", "1", "2"])
+            w.writerow(["2", "1", "2099.0", "d", "t", "spread", "Home U", "-7.5", "",
+                       "", "", "BookB", "regular", "1", "1", "2"])
+            # A third book quotes the AWAY side instead: +7.0 -> flips to home -7.0
+            w.writerow(["3", "1", "2099.0", "d", "t", "spread", "Away State", "7.0", "",
+                       "", "", "BookC", "regular", "1", "1", "2"])
+            # Incomplete game — must be skipped
+            w.writerow(["4", "2", "2099.0", "d", "t", "spread", "Home U", "-3.0", "",
+                       "", "", "BookA", "regular", "1", "1", "3"])
+            # FCS opponent — must be skipped by the FBS-only filter
+            w.writerow(["5", "3", "2099.0", "d", "t", "spread", "Home U", "-30.0", "",
+                       "", "", "BookA", "regular", "1", "1", "4"])
+
+        games = load_market_lines(betting_path, [sched_path], season=2099)
+        assert len(games) == 1, f"expected exactly the one complete FBS-vs-FBS game, got {games}"
+        g = games[0]
+        assert g.home_team == "Home U" and g.away_team == "Away State"
+        assert abs(g.home_margin - 7.0) < 1e-9, f"expected median home_margin=7.0, got {g.home_margin}"
+        assert g.actual_margin == 7
+        assert g.n_books == 3
+
+
+def test_line_movement_signal_direction():
+    """Sanity check on line_movement_signal's bookkeeping: a game where the line
+    moved toward home and home covered must count as 'with the move'; one where it
+    moved toward home but away covered must count 'against'."""
+    games = [
+        MarketGame(game_id="1", season=2099, week=1, season_type="regular",
+                  home_team="A", away_team="B", home_margin=7.0, n_books=2,
+                  actual_margin=10, opening_home_margin=3.0),   # moved +4 toward home, home won by 10 > 7 -> covered WITH the move
+        MarketGame(game_id="2", season=2099, week=1, season_type="regular",
+                  home_team="C", away_team="D", home_margin=7.0, n_books=2,
+                  actual_margin=2, opening_home_margin=3.0),    # moved +4 toward home, home only won by 2 < 7 -> did NOT cover, AGAINST the move
+    ]
+    r = line_movement_signal(games, min_movement=0.5)
+    assert r.n_games == 2
+    assert abs(r.with_move_cover_rate - 0.5) < 1e-9
 
 
 # ------------------------------------------------------------ end-to-end
